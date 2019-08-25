@@ -76,9 +76,9 @@ void TestES0_1Knapsack(int aN, int aW, int *wa, int *va);
 void TestESTSP(int n, int *aMat);
 void TestESTSP_UT(int n, int *aMat);
 void TestESTSP_UT_F(int n, int *aMat);
-void TestESTSP_UT_N(int n, char *cityNames[], int *aMat);
-void TestESTSP_UT_NP(int n, char *cityNames[], int *aMat);
-void TestESTSP_UT_TH(int n, char *cityNames[], int *aMat);
+void TestESTSP_UT_N(int n, const char *cityNames[], int *aMat);
+void TestESTSP_UT_NP(int n, const char *cityNames[], int *aMat);
+void TestESTSP_UT_TH(int n, const char *cityNames[], int *aMat);
 void ESTSP18Caller(int n, vector<vector<int>> aMat);
 void PermutingCaller(int n);
 void PermutingCallerA(int n);
@@ -102,7 +102,7 @@ void DP0_1KnapsackCaller(int n, int W, int *w, int *v);
 void LSEditDistCaller(const string &x, const string &y);
 void TestTSP_BHK_DPv(int n, int *aMat);
 void TestTSP_BHK_DP(int n, int *aMat);
-void TestTSP_BHK_DP_N(int n, char *cityNames[], int *aMat);
+void TestTSP_BHK_DP_N(int n, const char *cityNames[], int *aMat);
 
 //Backtracking
 void BTnQueensCaller(int n);

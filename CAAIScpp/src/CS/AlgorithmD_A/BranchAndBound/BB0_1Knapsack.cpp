@@ -16,7 +16,7 @@ struct stNode {
 static stNode ExtractMax();
 static void SiftDown(int i);
 static void SiftUp(int i);
-static void InsertQ(stNode &r);
+static void InsertQ(stNode r);
 static double BoundV(const stNode& node);
 static void ShowInput(int *w, int *v);
 static void ShowSortedInput();
@@ -85,7 +85,7 @@ static void SiftDown(int i)
         else done = true;
     }
 }
-static void InsertQ(stNode &r)
+static void InsertQ(stNode r)
 {
     Q.push_back(r);
     SiftUp(Q.size() - 1);

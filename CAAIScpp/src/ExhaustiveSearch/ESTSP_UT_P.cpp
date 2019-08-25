@@ -38,7 +38,7 @@ void ESTSP_UT_P(int i)
         CheckNewBestPath_UT_P();
 }
 
-void TestESTSP_UT_NP(int n, char *cityNames[], int *aMat)
+void TestESTSP_UT_NP(int n, const char *cityNames[], int *aMat)
 {
     N = n;
     minDist = Inf;

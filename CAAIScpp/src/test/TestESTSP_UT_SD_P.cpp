@@ -2,7 +2,7 @@
 //Practical: no print for each feasible solution
 void TestESTSP_UT_SD_P(int low = 0, int high = 0)
 {
-    char *cityNames[] =
+    const char *cityNames[] =
     { "济南", "青岛", "淄博", "枣庄", "东营", "烟台", "潍坊", "济宁",
       "泰安", "威海", "日照", "莱芜", "临沂", "德州", "聊城", "滨州", "菏泽"
     };

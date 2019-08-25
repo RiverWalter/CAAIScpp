@@ -95,7 +95,7 @@ void Release()
     }
 }
 
-void TestESTSP_UT_TH(int n, char *cityNames[], int *aMat)
+void TestESTSP_UT_TH(int n, const char *cityNames[], int *aMat)
 {
     distMat = aMat;
     distMata = aMat + n - 1;

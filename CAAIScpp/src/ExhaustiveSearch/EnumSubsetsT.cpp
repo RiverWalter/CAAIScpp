@@ -49,7 +49,7 @@ void OutputOneSubsetT()
 void OutputT(int mark, int n)
 {
     printf("%d:%d;", mark, n);
-    for (int i = 0; i < s.size(); i++)
+    for (size_t i = 0; i < s.size(); i++)
         printf("%d", s[i]);
     printf("\n");
 }

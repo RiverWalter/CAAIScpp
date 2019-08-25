@@ -54,7 +54,7 @@ static void getPath(int start, int set)
     minPath.push_back(x);
     getPath(x, masked);
 }
-void TestTSP_BHK_DP_N(int n, char *cityNames[], int *aMat)
+void TestTSP_BHK_DP_N(int n, const char *cityNames[], int *aMat)
 {
     N = n;
     distMat = aMat;

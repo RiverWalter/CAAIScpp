@@ -76,7 +76,7 @@ void TestESTSP_UT_F(int n, int *aMat)
     delete minPath;
     delete curPath;
 }
-void TestESTSP_UT_N(int n, char *cityNames[], int *aMat)
+void TestESTSP_UT_N(int n, const char *cityNames[], int *aMat)
 {
     N = n;
     cnt = 0;
