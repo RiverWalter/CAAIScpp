@@ -98,9 +98,6 @@
     <ClCompile Include="src\CS\AlgorithmD_A\Sorting\HeapSortNode\HeapSort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\CS\AlgorithmD_A\Sorting\HeapSortNode\MaxHeapify.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\CS\AlgorithmD_A\Sorting\MergeSortNode\MergeSort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -291,6 +288,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\Sorting\HeapSortNode\Heapifying.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
