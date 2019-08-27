@@ -290,7 +290,7 @@
     <ClCompile Include="src\CS\AlgorithmD_A\Sorting\HeapSortNode\Heapifying.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\CS\AlgorithmD_A\DivideAndConquer\ChessbboardTiling.cpp">
+    <ClCompile Include="src\CS\AlgorithmD_A\DivideAndConquer\ChessboardTiling.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
