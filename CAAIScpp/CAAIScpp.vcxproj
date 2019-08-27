@@ -138,7 +138,7 @@
     <ClCompile Include="src\CS\AlgorithmD_A\Classical\EuclidGCDR.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\Classical\Shuffle.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DivideAndConquer\BinarySearch.cpp" />
-    <ClCompile Include="src\CS\AlgorithmD_A\DivideAndConquer\ChessboardTiling.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\DivideAndConquer\ChessbboardTiling.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DP0_1Knapsack.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\LSEditDist.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\GraphBFS.cpp" />
