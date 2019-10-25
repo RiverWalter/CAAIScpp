@@ -25,7 +25,7 @@ int main()
     //Backtracking
     //BTnQueensCaller(4);
     //BKnQueensCaller(8);
-    TestKColoring(2);
+    TestKColoring(3);
 
     //***Dynamic programming
     //TestDP0_1Knapsack();
