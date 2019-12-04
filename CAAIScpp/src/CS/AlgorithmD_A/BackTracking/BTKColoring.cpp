@@ -9,7 +9,8 @@ static int N, K;
 static vector<vector<int>> AdjM;
 static vector<int> Stack;
 
-void BTKColoringCaller(int n, int k, vector<vector<int>> &adjM)
+void BTKColoringCaller(int n, int k, 
+    vector<vector<int>> &adjM)
 {
     N = n;
     K = k;

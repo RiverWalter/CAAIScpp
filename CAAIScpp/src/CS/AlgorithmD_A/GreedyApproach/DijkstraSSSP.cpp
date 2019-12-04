@@ -59,8 +59,7 @@ static int ExtractMin()
 }
 static void SiftDown(int i)
 {
-    bool done = false;
-    while (!done && (i = (i << 1) + 1) < Q.size()) {
+    while ((i = (i << 1) + 1) < Q.size()) {
         if (i + 1 < Q.size() && Dist[Q[i + 1]] < Dist[Q[i]])
             i++;
         int p = i - 1 >> 1;
@@ -70,7 +69,7 @@ static void SiftDown(int i)
             S[Q[i]] = p;
             swap(Q[p], Q[i]);
         }
-        else done = true;
+        else break;
     }
 }
 static void SiftUp(int i)

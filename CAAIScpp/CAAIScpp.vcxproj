@@ -148,6 +148,7 @@
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\PermutingSJT.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\Subsetting.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\DijkstraSSSP.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\HuffmanCoding.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\KruskalMST.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\PrimMST.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\RSA\ExtEucGCD.cpp" />
@@ -183,6 +184,7 @@
     <ClCompile Include="src\test\GraphAlgorithms\TestDijkstraSSSP.cpp" />
     <ClCompile Include="src\test\GraphAlgorithms\TestKruskalMST.cpp" />
     <ClCompile Include="src\test\GraphAlgorithms\TestPrimMST.cpp" />
+    <ClCompile Include="src\test\GreedyApproach\TestHuffmanCoding.cpp" />
     <ClCompile Include="src\test\test.cpp" />
     <ClCompile Include="src\test\TestBB0_1Knapsack.cpp" />
     <ClCompile Include="src\test\TestClassical.cpp" />

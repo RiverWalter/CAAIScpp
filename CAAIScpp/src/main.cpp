@@ -25,7 +25,7 @@ int main()
     //Backtracking
     //BTnQueensCaller(4);
     //BKnQueensCaller(8);
-    TestKColoring(3);
+    //TestKColoring(3);
 
     //***Dynamic programming
     //TestDP0_1Knapsack();
@@ -73,12 +73,14 @@ int main()
     //PermutingSJT(4);
 
     //***Graph
-    //TestKruskalMST(0);
-    //TestPrimMST(0);
-    //TestDijkstraSSSP(5);
     //TestDFS_BFS('D');
     //TestDFSM_BFSM('B');
     //DFSCaller();
+    //Gready search
+    //TestKruskalMST(0);
+    //TestPrimMST(0);
+    TestDijkstraSSSP(5);
+    //TestHuffmanCoding();
 
     //Branch and Bound
     //TestBB0_1Knapsack();

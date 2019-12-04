@@ -64,11 +64,13 @@ void TestTSP_BHK_DP_N_SD(int N);
 void TestExtEucGCD();
 
 //Graph
+void TestDFS_BFS(char t);
+void TestDFSM_BFSM(char t);
+//Greedy search
 void TestKruskalMST(int v0 = 0);
 void TestPrimMST(int v0 = 0);
 void TestDijkstraSSSP(int v0 = 0);
-void TestDFS_BFS(char t);
-void TestDFSM_BFSM(char t);
+void TestHuffmanCoding();
 
 //Branch and Bound
 void TestBB0_1Knapsack();

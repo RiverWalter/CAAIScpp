@@ -87,12 +87,14 @@ void PermutingSJT(int n);
 void DFSMCaller(int n, vector<vector<int>> &g);
 void BFSMCaller(int n, vector<vector<int>> &g);
 
-//Graph
+//Exhaustive search
+void DFSCaller(int n, vector<vector<int>>& g, int v0);
+void BFSCaller(int n, vector<vector<int>>& g, int v0);
+//Gready search
 void KruskalMSTCaller(int n, vector<vector<int>> &w, int v0);
 void PrimMSTCaller(int n, vector<vector<int>> &w, int v0);
 void DijkstraSSSPCaller(int n, vector<vector<int>> &w, int v0);
-void DFSCaller(int n, vector<vector<int>> &g, int v0);
-void BFSCaller(int n, vector<vector<int>> &g, int v0);
+void HuffmanCodingCaller(vector<pair<char, int>> chars);
 
 //Divide and conquer
 void ChessBoardTilingTest(int n);

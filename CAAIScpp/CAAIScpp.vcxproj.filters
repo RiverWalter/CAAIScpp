@@ -293,5 +293,11 @@
     <ClCompile Include="src\CS\AlgorithmD_A\DivideAndConquer\ChessboardTiling.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\HuffmanCoding.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\GreedyApproach\TestHuffmanCoding.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

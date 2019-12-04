@@ -1,7 +1,7 @@
 #include "../../../include/headers.h"
 void TestKruskalMST(int v0 = 0)
 {
-    int n[] = { 5, 9, 6 };
+    vector<int> n = { 5, 6, 9 };
     vector<vector<vector<int>>> w = {
         {
             //Prim's Minimum Spanning Tree (MST) | Greedy Algo-5
@@ -11,6 +11,15 @@ void TestKruskalMST(int v0 = 0)
             { INT_MAX,      3,      0,INT_MAX,      7 },
             {       6,      8,INT_MAX,      0,      9 },
             { INT_MAX,      5,      7,      9,      0 }
+        },
+        // Dijkstra's algorithm on Wikipedia
+        {
+            {       0,      7,      9,INT_MAX,INT_MAX,     14 },
+            {       7,      0,     10,     15,INT_MAX,INT_MAX },
+            {       9,     10,      0,     11,INT_MAX,      2 },
+            { INT_MAX,     15,     11,      0,      6,INT_MAX },
+            { INT_MAX,INT_MAX,INT_MAX,      6,      0,      9 },
+            {      14,INT_MAX,      2,INT_MAX,      9,      0 },
         },
         {
             //Kruskal's Minimum Spanning Tree using STL in C++
@@ -25,16 +34,8 @@ void TestKruskalMST(int v0 = 0)
             {       8,     11,INT_MAX,INT_MAX,INT_MAX,INT_MAX,      1,      0,      7 },
             { INT_MAX,INT_MAX,      2,INT_MAX,INT_MAX,INT_MAX,      6,      7,      0 },
         },
-        // Dijkstra's algorithm on Wikipedia
-        {
-            { 0, 7, 9, INT_MAX, INT_MAX, 14 },
-            { 7, 0, 10, 15, INT_MAX, INT_MAX },
-            { 9, 10, 0, 11, INT_MAX, 2 },
-            { INT_MAX, 15, 11, 0, 6, INT_MAX },
-            { INT_MAX, INT_MAX, INT_MAX, 6, 0, 9 },
-            { 14, INT_MAX, 2, INT_MAX, 9, 0 },
-        },
     };
-    for (int i = 0; i < 2; i++)
+    int k = n.size();
+    for (int i = 0; i < k; i++)
         KruskalMSTCaller(n[i], w[i], v0);
 }
