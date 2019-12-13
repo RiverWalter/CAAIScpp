@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-static void HuffmanCoding();
+static void BuildHuffmanTree();
 static void Initialization(vector<pair<char, int>> chars);
 static void Finalization();
 struct HFMNode {
@@ -26,11 +26,11 @@ void HuffmanCodingCaller(vector<pair<char, int>> chars)
 {
     ShowInput(chars);
     Initialization(chars);
-    HuffmanCoding();
+    BuildHuffmanTree();
     Output();
     Finalization();
 }
-void HuffmanCoding()
+void BuildHuffmanTree()
 {
     char C = 'A';
     while (Q.size() > 1)
@@ -72,17 +72,6 @@ static void SiftDown(vector<HFMNode*> &H, int i)
         else break;
     }
 }
-static void SiftDown0(vector<HFMNode*>& H, int i)
-{
-    bool done = false;
-    while (!done && ((i = (i << 1) + 1) < H.size())) {
-        if ((i + 1 < H.size()) && (H[i + 1]->Freq < H[i]->Freq))
-            i = i + 1;
-        if (H[(i - 1) >> 1]->Freq > H[i]->Freq)
-            swap(H[(i - 1) >> 1], H[i]);
-        else done = true;
-    }
-}
 static void MinHeapify(vector<HFMNode*> &H)
 {
     for (int i = (H.size() >> 1) - 1; i >= 0; i--) {
@@ -120,15 +109,15 @@ static void ShowInput(vector<pair<char, int>> chars)
 }
 static vector<char> coding;
 static vector<pair<char, vector<char>>> codingList;
-static void DFSHFMTree(HFMNode* node)
+static void GetHuffmanCoding(HFMNode* node)
 {
     if (node->Left)
     {
         coding.push_back('0');
-        DFSHFMTree(node->Left);
+        GetHuffmanCoding(node->Left);
         coding.pop_back();
         coding.push_back('1');
-        DFSHFMTree(node->Right);
+        GetHuffmanCoding(node->Right);
         coding.pop_back();
     }
     else
@@ -141,7 +130,7 @@ static void Output()
     printf("\nHuffman coding:\n");
     coding.clear();
     codingList.clear();
-    DFSHFMTree(Q[0]);
+    GetHuffmanCoding(Q[0]);
     sort(codingList.begin(), codingList.end(),
         [](pair<char, vector<char>>a, pair<char, vector<char>>b) 
         {return a.first < b.first; });

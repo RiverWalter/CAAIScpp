@@ -58,6 +58,21 @@ static int ExtractMin()
 }
 static void MinHeapify(int i)
 {
+    while ((i = (i << 1) + 1) < Q.size()) {
+        if (i + 1 < Q.size() && Dist[Q[i + 1]] < Dist[Q[i]])
+            i++;
+        int p = i - 1 >> 1;
+        if (Dist[Q[p]] > Dist[Q[i]])
+        {
+            S[Q[p]] = i;
+            S[Q[i]] = p;
+            swap(Q[p], Q[i]);
+        }
+        else break;
+    }
+}
+static void MinHeapify0(int i)
+{
     bool done = false;
     while (!done && (i = (i << 1) + 1) < Q.size()) {
         if (i + 1 < Q.size() && Dist[Q[i + 1]] < Dist[Q[i]])

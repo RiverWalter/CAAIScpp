@@ -78,8 +78,8 @@ int main()
     //DFSCaller();
     //Gready search
     //TestKruskalMST(0);
-    //TestPrimMST(0);
-    TestDijkstraSSSP(5);
+    TestPrimMST(0);
+    //TestDijkstraSSSP(5);
     //TestHuffmanCoding();
 
     //Branch and Bound
