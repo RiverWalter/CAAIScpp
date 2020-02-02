@@ -134,6 +134,9 @@
     <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BTKColoring.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BTnQueens.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\BranchAndBound\BB0_1Knapsack.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\BranchAndBound\BBTSP.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\BranchAndBound\BBTSPt.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\BranchAndBound\BBTSPtd.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\Classical\EuclidGCD.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\Classical\EuclidGCDR.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\Classical\Shuffle.cpp" />

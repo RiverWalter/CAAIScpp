@@ -5,20 +5,34 @@
 #include <iostream>
 #include <thread>
 #include <vector>
+#include <queue>
 
 void testString();
 void testFor();
+void testVector();
 vector<vector<int>> a;
 
 /////////
 void basicTests()
 {
-    testFor();
+    testVector();
+    //testFor();
 	//testString();
     //printf("RAND_MAX = %d", RAND_MAX);
     ////test sizeof
     //int n;
     //printf("sizeof int = %d, size of n = %d", sizeof(int), sizeof(n));
+}
+void testVector()
+{
+    vector<int> v(5);
+    for (auto x : v)
+        printf("%d,", x);
+    printf("\n");
+    vector<int> w(5, 55);
+    for (auto x : w)
+        printf("%d,", x);
+    printf("\n");
 }
 void testFor()
 {

@@ -74,6 +74,10 @@ void TestHuffmanCoding();
 
 //Branch and Bound
 void TestBB0_1Knapsack();
+int TestBBTSPtd();
+void TestBBTSPt();
+void TestBBTSP();
+void TestBBTSPRandom();
 
 //Backtracking
 void TestKColoring(int K = 3);

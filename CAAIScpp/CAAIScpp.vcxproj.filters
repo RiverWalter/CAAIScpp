@@ -299,5 +299,14 @@
     <ClCompile Include="src\test\GreedyApproach\TestHuffmanCoding.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\BranchAndBound\BBTSP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\BranchAndBound\BBTSPtd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\BranchAndBound\BBTSPt.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
