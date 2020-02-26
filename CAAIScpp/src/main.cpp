@@ -33,6 +33,7 @@ int main()
     //TestTSP_BHK_DP_N_SD(17);
     //TestTSP_BHK_DPA();
     //TestTSP_BHK_DPvA();
+    TestMatrixChainDP();
 
     //***Threading
     //TestESTSP_UT_SD_TH(7, 7);
@@ -86,7 +87,7 @@ int main()
     //TestBB0_1Knapsack();
     //TestBBTSPt();
     //TestBBTSPtd();
-    TestBBTSP();
+    //TestBBTSP();
     //TestBBTSPRandom();
 
     //***Classical

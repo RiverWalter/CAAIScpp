@@ -144,6 +144,7 @@
     <ClCompile Include="src\CS\AlgorithmD_A\DivideAndConquer\ChessboardTiling.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DP0_1Knapsack.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\LSEditDist.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\MatrixChain.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\GraphBFS.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\GraphDFS.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\LinearSearch.cpp" />

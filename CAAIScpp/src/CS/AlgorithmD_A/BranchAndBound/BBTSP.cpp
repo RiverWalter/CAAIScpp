@@ -220,7 +220,6 @@ void OutputW(vector<vector<int>> const& w)
 }
 } //namespace NS_BBTSP
 using namespace NS_BBTSP;
-// techiedelight: TSP using branch and -bound
 void TestBBTSP()
 {
     vector<vector<vector<int>>> w =
