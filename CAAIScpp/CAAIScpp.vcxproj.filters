@@ -311,5 +311,11 @@
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\MatrixChain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DPTSP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

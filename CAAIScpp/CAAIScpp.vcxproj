@@ -143,6 +143,7 @@
     <ClCompile Include="src\CS\AlgorithmD_A\DivideAndConquer\BinarySearch.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DivideAndConquer\ChessboardTiling.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DP0_1Knapsack.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DPTSP.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\LSEditDist.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\MatrixChain.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\GraphBFS.cpp" />
@@ -223,6 +224,9 @@
     <ClCompile Include="src\utilities\PrintDistData.cpp" />
     <ClCompile Include="src\utilities\RandomNumber.cpp" />
     <ClCompile Include="src\utilities\SetLogFile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
