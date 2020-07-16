@@ -69,6 +69,7 @@ void DPTSP(const vector<vector<int>> &w)
         } //for ss_i_1
         Subsets.push_back(ss_is);
     } //for i
+    //DP Completed
     //Stage 2: Search the last city in an optimal tour
     //sn: the complete set of 1 to n
     auto sn = Subsets[n][0]; 
