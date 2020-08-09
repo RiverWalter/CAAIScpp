@@ -1,6 +1,6 @@
 #include <tuple>
 using namespace std;
-tuple<int, int, int>ExtEucGCD(int a, int b)
+tuple<int, int, int>ExtEucGCDNonRec(int a, int b)
 {
     auto rst_k = make_tuple(a, 1, 0);
     auto rst_k1 = make_tuple(b, 0, 1);

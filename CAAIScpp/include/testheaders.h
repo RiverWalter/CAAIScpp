@@ -61,10 +61,16 @@ void TestTSP_BHK_DPA();
 void TestTSP_BHK_DP_N_SD(int N);
 void TestMatrixChainDP();
 void TestDPTSP();
-void TestDPTSPRandom();
+//void TestDPTSPRandom();
 
 //RSA
-void TestExtEucGCD();
+void TestRSA();
+void TestMRPT();
+void TestRS4ME();
+void TestExtEucGCDNonRec();
+void TestExtEuclidGCD();
+void TestMODInverse();
+void TestChnRA();
 
 //Graph
 void TestDFS_BFS(char t);

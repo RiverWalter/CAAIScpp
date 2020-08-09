@@ -1,5 +1,5 @@
 #include "../../include/headers.h"
-void TestExtEucGCD()
+void TestExtEucGCDNonRec()
 {
 #define N 22
     int ab[N][2] = {
@@ -36,7 +36,7 @@ void TestExtEucGCD()
         { 26187, 1533 }
     };
     for (int i = 0; i < N; i++) {
-        auto rst = ExtEucGCD(ab[i][0], ab[i][1]);
+        auto rst = ExtEucGCDNonRec(ab[i][0], ab[i][1]);
         printf("%2d: %d = %d*%d + %d*%d\n", i, 
             get<0>(rst), ab[i][0], get<1>(rst), ab[i][1], get<2>(rst));
     }

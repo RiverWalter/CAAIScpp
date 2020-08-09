@@ -156,7 +156,12 @@
     <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\HuffmanCoding.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\KruskalMST.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\PrimMST.cpp" />
-    <ClCompile Include="src\CS\AlgorithmD_A\RSA\ExtEucGCD.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\RSA\ChnRA.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\RSA\ExtEucGCDNonRec.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\RSA\ExtEuclidGCD.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\RSA\MRPT.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\RSA\RS4ME.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\RSA\RSA.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\Sorting\BubbleSort.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\Sorting\HeapSortNode\HeapSort.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\Sorting\HeapSortNode\Heapifying.cpp" />

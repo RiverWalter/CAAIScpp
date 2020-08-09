@@ -20,7 +20,13 @@ int main()
     //TestParityCheck(4, 30, 0);
 
     //RSA
-    //TestExtEucGCD();
+    TestRSA();
+    //TestMRPT();
+    //TestRS4ME();
+    //TestChnRA();
+    //TestMODInverse();
+    //TestExtEuclidGCD();
+    //TestExtEucGCDNonRec();
 
     //Backtracking
     //BTnQueensCaller(4);
@@ -34,7 +40,7 @@ int main()
     //TestTSP_BHK_DPA();
     //TestTSP_BHK_DPvA();
     //TestMatrixChainDP();
-    TestDPTSP();
+    //TestDPTSP();
 
     //***Threading
     //TestESTSP_UT_SD_TH(7, 7);
@@ -138,7 +144,7 @@ int main()
     char endTimeStr[100];
     GetDateTime(endTimeStr);
     printf("End time: %s\n", endTimeStr);
-    double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+    double time_spent = ((double)end - (double)begin) / CLOCKS_PER_SEC;
     if (time_spent > 3600) {
         printf("\nTime spent: %.3lf hours.\n", time_spent / 3600);
     }

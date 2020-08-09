@@ -89,9 +89,6 @@
     <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\PrimMST.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\CS\AlgorithmD_A\RSA\ExtEucGCD.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\CS\AlgorithmD_A\Sorting\HeapSortNode\HeapSort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -312,6 +309,24 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DPTSP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\RSA\ExtEucGCDNonRec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\RSA\ExtEuclidGCD.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\RSA\ChnRA.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\RSA\RS4ME.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\RSA\MRPT.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\RSA\RSA.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
