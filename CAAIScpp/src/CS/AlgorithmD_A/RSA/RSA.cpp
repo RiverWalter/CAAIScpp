@@ -4,17 +4,17 @@
 #include <algorithm>
 using namespace std;
 namespace NS_RSA {
+#define MRPT_S 3
 random_device rdev{};
 default_random_engine e{ rdev() };
-//#define bools(b) (b ? "true" : "false")
-void Get_ed(int phi_n, int& e, int& d);
-int Get_q(int p);
 int Get_p();
+int Get_q(int p);
+void Get_ed(int phi_n, int& e, int& d);
+int RS4ME(int a, int b, int n);
 bool MRPT(int n, int s);
 vector<int> GetUniqueRandNums(int low, int high, int n);
 bool Witness(int a, int n);
 int Get_t(int n_1);
-int RS4ME(int a, int b, int n);
 vector<int> GetBits(int b);
 struct Clsdxy {
     int d; int x; int y;
@@ -22,11 +22,6 @@ struct Clsdxy {
         d(ad), x(ax), y(ay) {}
 };
 Clsdxy ExtEuclidGCD(int a, int b);
-struct ClsRSA {
-    int m; int n; int e; int d; int c;
-    ClsRSA(int am, int an, int ae, int ad, int ac) :
-        m(am), n(an), e(ae), d(ad), c(ac) {}
-};
 void RSA(int m)
 {
     int p = Get_p();
@@ -43,6 +38,22 @@ void RSA(int m)
     printf("\te = %d, d = %d\n", e, d);
     printf("\tm = %d, c = %d, dc = %d\n", m, c, dc);
 }
+int Get_p()
+{
+    uniform_int_distribution<int> d{ 3, 31 };
+    int p = d(e);
+    if (p % 2 == 0) p++;
+    while (!MRPT(p, MRPT_S)) p += 2;
+    return p;
+}
+int Get_q(int p)
+{
+    //ceiling with pure integer operations
+    int q = (256 + p - 1) / p;
+    if (q % 2 == 0) q++;
+    while (q == p || !MRPT(q, MRPT_S)) q += 2;
+    return q;
+}
 void Get_ed(int phi_n, int& e, int& d)
 {
     e = 3;
@@ -55,22 +66,6 @@ void Get_ed(int phi_n, int& e, int& d)
     d = dxy.x;
     if (d < 0)
         d += phi_n;
-}
-int Get_q(int p)
-{
-    //ceil with pure integer operations
-    int q = (256 + p - 1) / p;
-    if (q % 2 == 0) q++;
-    while (q == p || !MRPT(q, 3)) q += 2;
-    return q;
-}
-int Get_p()
-{
-    uniform_int_distribution<int> d{ 3, 31 };
-    int p = d(e);
-    if (p % 2 == 0) p++;
-    while (!MRPT(p, 3)) p += 2;
-    return p;
 }
 bool MRPT(int n, int s)
 {
@@ -183,9 +178,8 @@ Clsdxy ExtEuclidGCD(int a, int b)
 }
 } //namespace NS_RSA
 using namespace NS_RSA;
-void TestRSA()
+void TestRSA(int m = 13)
 {
-    //p=5, q=11, e=3, d=27, m=13, c=52
     for (int i = 0; i < 20; i++)
-        RSA(13);
+        RSA(m);
 }
