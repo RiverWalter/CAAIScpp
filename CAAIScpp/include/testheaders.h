@@ -29,8 +29,7 @@ void TestEuclidGCDStepsR(int a, int b);
 void TestEuclidGCDTypicalCasesR(bool showSteps = false);
 
 void TestEuclidGCD();
-void TestEuclidGCDSteps(int a, int b);
-void TestEuclidGCDTypicalCases(bool showSteps = false);
+void TestEuclidGCDSteps();
 
 //Primality test
 void TestPrimalTestTrialDiv(int n);

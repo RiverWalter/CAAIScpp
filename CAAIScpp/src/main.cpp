@@ -3,7 +3,7 @@
 
 int main()
 {
-	SetRandSeed(-1);
+	//SetRandSeed(-1);
     //SetRandSeed(23);
     ConfigConsole();
     //SetLogFile("SD_TSP_TH_15");
@@ -106,8 +106,8 @@ int main()
     //TestEuclidGCDTypicalCases();
     //TestEuclidGCDSteps(168, 180);
     //TestEuclidGCDSteps(252, 105);
-    TestEuclidGCD();
-    //TestShuffle(13);
+    //TestEuclidGCD();
+    TestShuffle(5);
 
     //***Sorting
     //HeapSortTest(8);

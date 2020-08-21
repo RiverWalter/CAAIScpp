@@ -218,7 +218,6 @@
     <ClCompile Include="src\test\TestPrimality.cpp" />
     <ClCompile Include="src\test\TestRandomNumber.cpp" />
     <ClCompile Include="src\test\TestRSA.cpp" />
-    <ClCompile Include="src\test\TestShuffle.cpp" />
     <ClCompile Include="src\test\TestSorting.cpp" />
     <ClCompile Include="src\test\TestTSP_BHK_DPA.cpp" />
     <ClCompile Include="src\test\TestTSP_BHK_DPvA.cpp" />

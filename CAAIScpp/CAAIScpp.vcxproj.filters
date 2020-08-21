@@ -245,9 +245,6 @@
     <ClCompile Include="src\test\TestRSA.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\TestShuffle.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\TestSorting.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
