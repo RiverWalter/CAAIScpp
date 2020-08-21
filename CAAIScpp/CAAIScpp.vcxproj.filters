@@ -227,9 +227,6 @@
     <ClCompile Include="src\test\TestESTSPA.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\TestEuclidGCD.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\TestEuclidGCDR.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -327,6 +324,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\CS\AlgorithmD_A\RSA\RSA.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\TestEuclidGCDSteps.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -28,7 +28,7 @@ void TestEuclidGCDR(int a, int b);
 void TestEuclidGCDStepsR(int a, int b);
 void TestEuclidGCDTypicalCasesR(bool showSteps = false);
 
-void TestEuclidGCD(int a, int b);
+void TestEuclidGCD();
 void TestEuclidGCDSteps(int a, int b);
 void TestEuclidGCDTypicalCases(bool showSteps = false);
 

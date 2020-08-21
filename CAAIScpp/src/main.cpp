@@ -20,7 +20,7 @@ int main()
     //TestParityCheck(4, 30, 0);
 
     //RSA
-    TestRSA();
+    //TestRSA();
     //TestMRPT();
     //TestRS4ME();
     //TestChnRA();
@@ -106,7 +106,7 @@ int main()
     //TestEuclidGCDTypicalCases();
     //TestEuclidGCDSteps(168, 180);
     //TestEuclidGCDSteps(252, 105);
-    //TestEuclidGCD(252, 105);
+    TestEuclidGCD();
     //TestShuffle(13);
 
     //***Sorting
