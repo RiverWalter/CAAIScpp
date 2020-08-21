@@ -63,9 +63,9 @@ void HeapSort(int H[], int n);
 int LinearSearch(int a[], int n, int x);
 int BinarySearch(int a[], int n, int x);
 int BinarySearchR(int a[], int low, int high, int x);
-int EuclidGCD(int a, int b);
+//int EuclidGCD(int a, int b);
 int EuclidGCDR(int a, int b);
-void Shuffle(int a[], int n);
+//void Shuffle(int a[], int n);
 
 //Exhaustive search
 bool PrimalTestTrialDiv(int n);

@@ -18,7 +18,7 @@ void MaxHeapifyTest(int n);
 void HeapSortTest(int n);
 
 //classical
-void LinearSearchTest(int n);
+void TestLinearSearch(int n);
 void BinarySearchTest(int n);
 void BinarySearchRTest(int n);
 void TestShuffle(int n);

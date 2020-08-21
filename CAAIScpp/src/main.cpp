@@ -100,14 +100,14 @@ int main()
     //***Classical
     //BinarySearchTest(8);
     //BinarySearchRTest(8);
-    //LinearSearchTest(8);
+    TestLinearSearch(8);
 	//TestEuclidGCDTypicalCasesR();
 	//TestEuclidGCDTypicalCases(true);
     //TestEuclidGCDTypicalCases();
     //TestEuclidGCDSteps(168, 180);
     //TestEuclidGCDSteps(252, 105);
     //TestEuclidGCD();
-    TestShuffle(5);
+    //TestShuffle(5);
 
     //***Sorting
     //HeapSortTest(8);
