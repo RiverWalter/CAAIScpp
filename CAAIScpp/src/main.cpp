@@ -57,7 +57,7 @@ int main()
     //TestESTSP18();
     //TestESTSP18SD(10);
 
-    //Subsetting(3);
+    TestSubsetting(4);
     //EnumSubsetsT(3);
     //TestES0_1KnapsackR(20, 16, 26);
     //TestES0_1KnapsackR();
@@ -100,7 +100,7 @@ int main()
     //***Classical
     //BinarySearchTest(8);
     //BinarySearchRTest(8);
-    TestLinearSearch(8);
+    //TestLinearSearch(8);
 	//TestEuclidGCDTypicalCasesR();
 	//TestEuclidGCDTypicalCases(true);
     //TestEuclidGCDTypicalCases();

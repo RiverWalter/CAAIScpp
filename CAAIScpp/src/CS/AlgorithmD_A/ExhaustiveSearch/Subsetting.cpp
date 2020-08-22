@@ -1,4 +1,5 @@
 #include <vector>
+namespace NS_Subsetting {
 using namespace std;
 void OutputOneSubsetBinary();
 void OutputOneSubset();
@@ -19,14 +20,14 @@ void Subsetting(int n)
         printf("\n");
     }
 }
-static void OutputOneSubsetBinary()
+void OutputOneSubsetBinary()
 {
     static int cnt = 0;
     printf("%03d: ", ++cnt);
     for (int i = x.size() - 1; i >= 0; i--)
         printf("%d", x[i]);
 }
-static void OutputOneSubset()
+void OutputOneSubset()
 {
     printf("; {");
     int k = 0;
@@ -39,4 +40,11 @@ static void OutputOneSubset()
         }
     }
     printf("}");
+}
+} //namespace NS_Subsetting
+using namespace NS_Subsetting;
+void TestSubsetting(int n)
+{
+    x.clear();
+    Subsetting(n);
 }
