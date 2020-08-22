@@ -60,7 +60,7 @@ void MaxHeapify(int H[], int n);
 void HeapSort(int H[], int n);
 
 //classical
-int LinearSearch(int a[], int n, int x);
+//int LinearSearch(int a[], int n, int x);
 int BinarySearch(int a[], int n, int x);
 int BinarySearchR(int a[], int low, int high, int x);
 //int EuclidGCD(int a, int b);
@@ -70,7 +70,7 @@ int EuclidGCDR(int a, int b);
 //Exhaustive search
 bool PrimalTestTrialDiv(int n);
 void ESSubsetTree(int n);
-void Subsetting(int n);
+//void Subsetting(int n);
 void EnumSubsetsT(int n);
 void TestES0_1Knapsack(int aN, int aW, int *wa, int *va);
 void TestESTSP(int n, int *aMat);
@@ -80,7 +80,7 @@ void TestESTSP_UT_N(int n, const char *cityNames[], int *aMat);
 void TestESTSP_UT_NP(int n, const char *cityNames[], int *aMat);
 void TestESTSP_UT_TH(int n, const char *cityNames[], int *aMat);
 void ESTSP18Caller(int n, vector<vector<int>> aMat);
-void PermutingCaller(int n);
+//void PermutingCaller(int n);
 void PermutingCallerA(int n);
 void PermutingHeapCaller(int n);
 void PermutingSJT(int n);

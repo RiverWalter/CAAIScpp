@@ -1,5 +1,6 @@
 #include <vector>
-#include <utility>
+#include <utility> //swap
+namespace NS_Permuting {
 using namespace std;
 void Permuting(int i);
 void OutputOnePermutation();
@@ -12,7 +13,7 @@ void PermutingCaller(int n)
         x.push_back(i + 1);
     Permuting(0);
 }
-static void Permuting(int i)
+void Permuting(int i)
 {
     if (i < N - 1) {
         for (int j = i; j < N; ++j) {
@@ -24,11 +25,18 @@ static void Permuting(int i)
     else
         OutputOnePermutation();
 }
-static void OutputOnePermutation()
+void OutputOnePermutation()
 {
     static int cnt = 0;
     printf("%03d: ", ++cnt);
     for (auto x : x)
         printf("%d", x);
     printf("\n");
+}
+} //namespace NS_Permuting
+using namespace NS_Permuting;
+void TestPermuting(int n)
+{
+    x.clear();
+    PermutingCaller(n);
 }

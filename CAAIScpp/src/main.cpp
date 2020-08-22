@@ -57,7 +57,8 @@ int main()
     //TestESTSP18();
     //TestESTSP18SD(10);
 
-    TestSubsetting(4);
+    //TestSubsetting(4);
+    TestPermuting(4);
     //EnumSubsetsT(3);
     //TestES0_1KnapsackR(20, 16, 26);
     //TestES0_1KnapsackR();
@@ -68,8 +69,6 @@ int main()
     //ESPermutationTreeI(7);
     //ESSubsetTree(7);
     //TestPrimalTestTrialDivRange(100, true);
-    //PermutingCaller(4);
-    //PermutingCaller(4);
     /*
     PermutingCallerA(1);
     PermutingCallerA(2);
