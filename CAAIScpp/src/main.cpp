@@ -58,7 +58,8 @@ int main()
     //TestESTSP18SD(10);
 
     //TestSubsetting(4);
-    TestPermuting(4);
+    //TestPermuting(4);
+    TestPermutingSJT(3);
     //EnumSubsetsT(3);
     //TestES0_1KnapsackR(20, 16, 26);
     //TestES0_1KnapsackR();

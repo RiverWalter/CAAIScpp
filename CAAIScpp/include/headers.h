@@ -83,7 +83,7 @@ void ESTSP18Caller(int n, vector<vector<int>> aMat);
 //void PermutingCaller(int n);
 void PermutingCallerA(int n);
 void PermutingHeapCaller(int n);
-void PermutingSJT(int n);
+//void PermutingSJT(int n);
 void DFSMCaller(int n, vector<vector<int>> &g);
 void BFSMCaller(int n, vector<vector<int>> &g);
 

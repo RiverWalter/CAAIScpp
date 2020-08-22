@@ -39,6 +39,7 @@ void TestPrimalTestTrialDivRange(int m, bool detail = false);
 //Exhaustive search
 void TestSubsetting(int n);
 void TestPermuting(int n);
+void TestPermutingSJT(int n);
 void TestESTSP18SD(int n);
 void TestESTSP18();
 //t: D for DFS, B for BFS
