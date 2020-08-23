@@ -40,9 +40,11 @@ void TestPrimalTestTrialDivRange(int m, bool detail = false);
 void TestSubsetting(int n);
 void TestPermuting(int n);
 void TestPermutingSJT(int n);
+void TestGraphBFS(int v0);
+void TestGraphDFS(int v0);
+
 void TestESTSP18SD(int n);
 void TestESTSP18();
-//t: D for DFS, B for BFS
 void TestES0_1KnapsackA();
 void TestES0_1KnapsackR(int n = 6, int wRange = 20, int vRange = 20);
 void ESPermutationTreeI(int n);
@@ -75,7 +77,6 @@ void TestMODInverse();
 void TestChnRA();
 
 //Graph
-void TestDFS_BFS(char t);
 void TestDFSM_BFSM(char t);
 //Greedy search
 void TestKruskalMST(int v0 = 0);

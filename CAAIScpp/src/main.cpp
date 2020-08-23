@@ -59,7 +59,10 @@ int main()
 
     //TestSubsetting(4);
     //TestPermuting(4);
-    TestPermutingSJT(3);
+    //TestPermutingSJT(3);
+    //TestGraphBFS(3);
+    TestGraphDFS(3);
+
     //EnumSubsetsT(3);
     //TestES0_1KnapsackR(20, 16, 26);
     //TestES0_1KnapsackR();

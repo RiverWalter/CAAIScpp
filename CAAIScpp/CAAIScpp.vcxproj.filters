@@ -188,9 +188,6 @@
     <ClCompile Include="src\test\TestClassical.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\TestDFS_BFS.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\TestDFSM_BFSM.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
