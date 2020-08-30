@@ -50,14 +50,14 @@ void ConfigConsole();
 void GetDateTime(char *str);
 
 //sorting
-void SelectionSort(int a[], int n);
-void BubbleSort(int a[], int n);
-void InsertionSort(int a[], int n);
-void QuickSort(int a[], int low, int high);
-void TwoWayMerge(int a[], int p, int q, int r);
-void MergeSort(int a[], int low, int high);
-void MaxHeapify(int H[], int n);
-void HeapSort(int H[], int n);
+//void SelectionSort(int a[], int n);
+//void BubbleSort(int a[], int n);
+//void InsertionSort(int a[], int n);
+//void QuickSort(int a[], int low, int high);
+//void TwoWayMerge(int a[], int p, int q, int r);
+//void MergeSort(int a[], int low, int high);
+//void MaxHeapify(int H[], int n);
+//void HeapSort(int H[], int n);
 
 //classical
 //int LinearSearch(int a[], int n, int x);
@@ -88,8 +88,8 @@ void DFSMCaller(int n, vector<vector<int>> &g);
 void BFSMCaller(int n, vector<vector<int>> &g);
 
 //Exhaustive search
-void DFSCaller(int n, vector<vector<int>>& g, int v0);
-void BFSCaller(int n, vector<vector<int>>& g, int v0);
+//void DFSCaller(int n, vector<vector<int>>& g, int v0);
+//void BFSCaller(int n, vector<vector<int>>& g, int v0);
 //Gready search
 void KruskalMSTCaller(int n, vector<vector<int>> &w, int v0);
 void PrimMSTCaller(int n, vector<vector<int>> &w, int v0);

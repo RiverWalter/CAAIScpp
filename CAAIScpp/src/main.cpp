@@ -61,7 +61,7 @@ int main()
     //TestPermuting(4);
     //TestPermutingSJT(3);
     //TestGraphBFS(3);
-    TestGraphDFS(3);
+    //TestGraphDFS(3);
 
     //EnumSubsetsT(3);
     //TestES0_1KnapsackR(20, 16, 26);
@@ -113,14 +113,14 @@ int main()
     //TestShuffle(5);
 
     //***Sorting
-    //HeapSortTest(8);
-	//MaxHeapifyTest(8);
-    //MergeSortTest(10);
-	//TwoWayMergeTest(3, 4);
-	//QuickSortTest(10);
-	//InsertionSortTest(10);
-	//BubbleSortTest(10);
-    //SelectionSortTest(10);
+    TestHeapSort(8);
+	//TestMaxHeapify(8);
+    //TestMergeSort(10);
+	//TestTwoWayMerge(3, 4);
+	//TestQuickSort(10);
+	//TestInsertionSort(10);
+	//TestBubbleSort(10);
+    //TestSelectionSort(10);
 
     //***Pseudo random number
     //RandRangeTest(10, 0, 100);

@@ -5,7 +5,7 @@ void BinarySearchTest(int n)
     int *a = new int[n];
     int m = 3 * n / 2;
     RandRangeArr(n, 1, m, a);
-    InsertionSort(a, n);
+    //InsertionSort(a, n);
     int x = RandRange(1, m);
     int p = BinarySearch(a, n, x);
     printf("¶þ·ÖËÑË÷Ëã·¨²âÊÔ:\n");
@@ -24,7 +24,7 @@ void BinarySearchRTest(int n)
     int *a = new int[n];
     int m = 3 * n / 2;
     RandRangeArr(n, 1, m, a);
-    InsertionSort(a, n);
+    //InsertionSort(a, n);
     int x = RandRange(1, m);
     int p = BinarySearchR(a, 0, n - 1, x);
     printf("¶þ·ÖËÑË÷Ëã·¨²âÊÔ(µÝ¹é):\n");

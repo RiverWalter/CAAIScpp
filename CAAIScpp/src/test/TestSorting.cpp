@@ -16,7 +16,7 @@ void SelectionSortTest(int n)
     if (n > 20) {
         printf("......\n");
     }
-    delete a;
+    delete[]a;
 }
 void BubbleSortTest(int n)
 {

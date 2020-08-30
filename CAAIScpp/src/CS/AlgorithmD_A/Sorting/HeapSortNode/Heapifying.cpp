@@ -1,5 +1,7 @@
 #include <utility>
-using namespace std; 
+#include <random>
+namespace NS_MaxHeapify {
+using namespace std;
 void SiftDown(int H[], int n, int i);
 void MaxHeapify(int H[], int n)
 {
@@ -7,7 +9,6 @@ void MaxHeapify(int H[], int n)
         SiftDown(H, n, i);
     }
 }
-
 static void SiftDown(int H[], int n, int i)
 {
     bool done = false;
@@ -18,4 +19,27 @@ static void SiftDown(int H[], int n, int i)
             swap(H[(i - 1) / 2], H[i]);
         else done = true;
     }
+}
+} //namespace NS_MaxHeapify
+using namespace NS_MaxHeapify;
+void TestMaxHeapify(int n)
+{
+    random_device rdev{};
+    default_random_engine e{ rdev() };
+    int m = n <= 20 ? 99 : n * 10 - 1;
+    uniform_int_distribution<int> rnd{ 0, m };
+    int* a = new int[n];
+    for (int i = 0; i < n; i++)
+        a[i] = rnd(e);
+    printf("测试建堆算法：n = %d\n", n);
+    printf("建堆前数组:\n");
+    for (int i = 0; i < n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+    MaxHeapify(a, n);
+    printf("建堆后数组:\n");
+    for (int i = 0; i < n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+    delete[]a;
 }

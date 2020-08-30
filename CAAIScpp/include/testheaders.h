@@ -8,14 +8,14 @@ void RandDblTest(int n);
 void RandTest(int n);
 
 //sorting tests
-void SelectionSortTest(int n);
-void BubbleSortTest(int n);
-void InsertionSortTest(int n);
-void QuickSortTest(int n);
-void TwoWayMergeTest(int m, int n);
-void MergeSortTest(int n);
-void MaxHeapifyTest(int n);
-void HeapSortTest(int n);
+void TestSelectionSort(int n);
+void TestBubbleSort(int n);
+void TestInsertionSort(int n);
+void TestQuickSort(int n);
+void TestTwoWayMerge(int m, int n);
+void TestMergeSort(int n);
+void TestMaxHeapify(int n);
+void TestHeapSort(int n);
 
 //classical
 void TestLinearSearch(int n);

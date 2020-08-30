@@ -52,7 +52,7 @@ void TestEuclidGCD()
     for (int i = 0; i < N; i++) {
         int a = ab[i][0];
         int b = ab[i][1];
-        int gcd = EuclidGCD(a, ab[i][1]);
+        int gcd = EuclidGCD(a, b);
         printf("The GCD of %d and %d is %d\n", 
             a, b, gcd);
     }
