@@ -19,9 +19,12 @@ void TestHeapSort(int n);
 
 //classical
 void TestLinearSearch(int n);
-void BinarySearchTest(int n);
 void BinarySearchRTest(int n);
 void TestShuffle(int n);
+
+//Divide and Conquer
+void TestBinarySearch(int n);
+void TestChessBoardTiling(int n);
 
 //EuclidGCD
 void TestEuclidGCDR(int a, int b);

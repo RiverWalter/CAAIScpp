@@ -61,7 +61,7 @@ void GetDateTime(char *str);
 
 //classical
 //int LinearSearch(int a[], int n, int x);
-int BinarySearch(int a[], int n, int x);
+//int BinarySearch(int a[], int n, int x);
 int BinarySearchR(int a[], int low, int high, int x);
 //int EuclidGCD(int a, int b);
 int EuclidGCDR(int a, int b);
@@ -97,7 +97,7 @@ void DijkstraSSSPCaller(int n, vector<vector<int>> &w, int v0);
 void HuffmanCodingCaller(vector<pair<char, int>> chars);
 
 //Divide and conquer
-void ChessBoardTilingTest(int n);
+//void ChessBoardTilingTest(int n);
 
 //Dynamic programming
 void DP0_1KnapsackCaller(int n, int W, int *w, int *v);

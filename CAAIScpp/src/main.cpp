@@ -46,7 +46,8 @@ int main()
     //TestESTSP_UT_SD_TH(7, 7);
 
     //Divide and conquer
-    //ChessBoardTilingTest(3);
+    //TestBinarySearch(8);
+    TestChessBoardTiling(4);
 
     //***Exhaustive search
     //TestESTSP_UT_SD_P(7, 7);
@@ -101,7 +102,6 @@ int main()
     //TestBBTSPRandom();
 
     //***Classical
-    //BinarySearchTest(8);
     //BinarySearchRTest(8);
     //TestLinearSearch(8);
 	//TestEuclidGCDTypicalCasesR();
@@ -114,7 +114,7 @@ int main()
 
     //***Sorting
     //TestHeapSort(8);
-	TestMaxHeapify(8);
+	//TestMaxHeapify(8);
     //TestMergeSort(10);
 	//TestTwoWayMerge(3, 4);
 	//TestQuickSort(10);

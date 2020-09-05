@@ -1,18 +1,14 @@
+#include <stdlib.h>
+#include <time.h>
 #include <vector>
 using namespace std;
-int RandIntN(int m);
+namespace NS_ChessBoardTiling {
+int RandIntM(int m);
 void ChessBoardTilingCaller(int n, int p0, int q0);
 void ChessboardTiling(int r, int c, int p, int q, int s);
-void OutputChessboard(int n);
+void OutputChessboard(int m, int p0, int q0);
 static vector<vector<int>> Chessboard;
-static int TileNo = 0;
-void ChessBoardTilingTest(int n)
-{
-    int m = 1 << n;
-    int p0 = RandIntN(m);
-    int q0 = RandIntN(m);
-    ChessBoardTilingCaller(n, p0, q0);
-}
+static int TileNo;
 static void ChessBoardTilingCaller(int n, int p0, int q0)
 {
     int m = 1 << n;
@@ -20,33 +16,39 @@ static void ChessBoardTilingCaller(int n, int p0, int q0)
     for (auto &v: Chessboard)
         v.resize(m);
     Chessboard[p0][q0] = -1;
+    TileNo = 0;
     ChessboardTiling(0, 0, p0, q0, m);
-    OutputChessboard(m);
+    OutputChessboard(m, p0, q0);
 }
-static void ChessboardTiling(int r, int c, int p, int q, int s)
+void ChessboardTiling(int r, int c, 
+    int p, int q, int s)
 {
     if (s == 1)
         return;
     s /= 2;
     int no = ++TileNo;
+    //left-top sub-board
     if (p < r + s && q < c + s)
         ChessboardTiling(r, c, p, q, s);
     else {
         Chessboard[r + s - 1][c + s - 1] = no;
         ChessboardTiling(r, c, r + s - 1, c + s - 1, s);
     }
+    //right-top sub-board
     if (p < r + s && q >= c + s)
         ChessboardTiling(r, c + s, p, q, s);
     else {
         Chessboard[r + s - 1][c + s] = no;
         ChessboardTiling(r, c + s, r + s - 1, c + s, s);
     }
+    //right-bottom sub-board
     if (p >= r + s && q >= c + s)
         ChessboardTiling(r + s, c + s, p, q, s);
     else {
         Chessboard[r + s][c + s] = no;
         ChessboardTiling(r + s, c + s, r + s, c + s, s);
     }
+    //left-bottom sub-board
     if (p >= r + s && q < c + s)
         ChessboardTiling(r + s, c, p, q, s);
     else {
@@ -54,8 +56,11 @@ static void ChessboardTiling(int r, int c, int p, int q, int s)
         ChessboardTiling(r + s, c, r + s, c + s - 1, s);
     }
 }
-static void OutputChessboard(int m)
+void OutputChessboard(int m, int p0, int q0)
 {
+    printf("Chessboard tiling:\n");
+    printf("Size: %dx%d, Defect position: (%c,%c)\n", 
+        m, m, p0 + 65, q0 + 65);
     printf("%3c", ' ');
     for (int i = 0; i < m; i++)
         printf("%3c", i + 65);
@@ -68,7 +73,19 @@ static void OutputChessboard(int m)
     }
 }
 //Generate one random integer in the range [0, m)
-static int RandIntN(int n)
+int RandIntM(int m)
 {
-    return rand() % (n);
+    return rand() % (m);
+}
+} //NS_ChessBoardTiling
+using namespace NS_ChessBoardTiling;
+void TestChessBoardTiling(int n)
+{
+    //Set random seed using system time for rand()
+    srand((unsigned)time(NULL));
+
+    int m = 1 << n;
+    int p0 = RandIntM(m);
+    int q0 = RandIntM(m);
+    ChessBoardTilingCaller(n, p0, q0);
 }
