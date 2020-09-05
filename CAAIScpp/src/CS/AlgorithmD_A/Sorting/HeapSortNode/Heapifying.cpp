@@ -9,7 +9,7 @@ void MaxHeapify(int H[], int n)
         SiftDown(H, n, i);
     }
 }
-static void SiftDown(int H[], int n, int i)
+void SiftDown(int H[], int n, int i)
 {
     bool done = false;
     while (!done && ((i = 2 * i + 1) < n)) {

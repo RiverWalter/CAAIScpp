@@ -9,10 +9,11 @@ void BubbleSort(int a[], int n)
       for (int j = 0; j < i - 1; j++) {
          if (a[j]> a [j + 1]) {
             swap(a[j], a[j + 1]);
-			hasSwap = true;
+            hasSwap = true;
          }
       }
-      if (!hasSwap) break;
+      if (!hasSwap)
+          break;
    }
 }
 } //namespace NS_BubbleSort

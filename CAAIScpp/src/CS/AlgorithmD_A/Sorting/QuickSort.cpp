@@ -24,7 +24,7 @@ int partition(int a[], int low, int high)
         }
     }
     if (a[high] < a[i + 1])
-        swap(a[i + 1], a[high]);
+        swap(a[high], a[i + 1]);
     return i + 1;
 }
 } //namespace NS_QuickSort

@@ -25,8 +25,7 @@ using namespace NS_Shuffle;
 void TestShuffle(int n)
 {
     //Set random seed using system time for rand()
-    time_t t;
-    srand((unsigned)time(&t));
+    srand((unsigned)time(NULL));
 
     vector<int> a(n);
     printf("Testing shuffle algorithm: n = %d\n", n);

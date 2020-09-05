@@ -113,8 +113,8 @@ int main()
     //TestShuffle(5);
 
     //***Sorting
-    TestHeapSort(8);
-	//TestMaxHeapify(8);
+    //TestHeapSort(8);
+	TestMaxHeapify(8);
     //TestMergeSort(10);
 	//TestTwoWayMerge(3, 4);
 	//TestQuickSort(10);
