@@ -1,13 +1,14 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+namespace NS_LSEditDist {
 using namespace std;
-static void Initialization(const string &x, const string &y);
-static int GetLSEditDist(const string &x, const string &y);
-static void GetLSEdits(const string &x, const string &y);
-static void Output(const string &x, const string &y, int OptD);
-static void OutputE(const string &x, const string &y);
-static void OutputP(const string &x, const string &y);
+void Initialization(const string &x, const string &y);
+int GetLSEditDist(const string &x, const string &y);
+void GetLSEdits(const string &x, const string &y);
+void Output(const string &x, const string &y, int OptD);
+void OutputE(const string &x, const string &y);
+void OutputP(const string &x, const string &y);
 static int m, n;
 static vector<vector<int>> E;
 static vector<vector<char>> P;
@@ -19,7 +20,7 @@ void LSEditDistCaller(const string &x, const string &y)
     GetLSEdits(x, y);
     Output(x, y, OptD);
 }
-static int GetLSEditDist(const string &x, const string &y)
+int GetLSEditDist(const string &x, const string &y)
 {
     for (int i = 1; i <= m; i++)
         for (int j = 1; j <= n; j++)
@@ -36,7 +37,7 @@ static int GetLSEditDist(const string &x, const string &y)
         }
     return E[m][n];
 }
-static void GetLSEdits(const string &x, const string &y)
+void GetLSEdits(const string &x, const string &y)
 {
     int i = m, j = n;
     while (i > 0 || j > 0)
@@ -61,7 +62,7 @@ static void GetLSEdits(const string &x, const string &y)
         }
     }
 }
-static void Initialization(const string &x, const string &y)
+void Initialization(const string &x, const string &y)
 {
     m = x.length();
     n = y.length();
@@ -82,7 +83,7 @@ static void Initialization(const string &x, const string &y)
     xe.clear();
     ye.clear();
 }
-static void Output(const string &x, const string &y, int OptD)
+void Output(const string &x, const string &y, int OptD)
 {
     printf("Levenshtein distance: \n");
     printf("Strings: %s, %s\n\n", x.c_str(), y.c_str());
@@ -97,7 +98,7 @@ static void Output(const string &x, const string &y, int OptD)
         printf("%2c", c);
     printf("\n\n");
 }
-static void OutputE(const string &x, const string &y)
+void OutputE(const string &x, const string &y)
 {
     printf(" E  ");
     for (int j = 0; j < n; j++)
@@ -117,7 +118,7 @@ static void OutputE(const string &x, const string &y)
     }
     printf("\n");
 }
-static void OutputP(const string &x, const string &y)
+void OutputP(const string &x, const string &y)
 {
     printf(" P  ");
     for (int j = 0; j < n; j++)
@@ -136,4 +137,34 @@ static void OutputP(const string &x, const string &y)
         printf("\n");
     }
     printf("\n");
+}
+} //namespace NS_LSEditDist
+using namespace NS_LSEditDist;
+void TestLSEditDist()
+{
+    vector<vector<string>> abs = {
+        { "SUNNY", "SNOWY" },
+        { "EXPONENTIAL", "POLYNOMIAL" },
+        { "popular", "people" },
+        { "water", "wheat" },
+        { "begins", "bargain" },
+        { "servant", "reveal" },
+        { "concise", "receives" },
+        { "friend", "difference" },
+        { "coincides", "conceive" },
+        { "luminiscence", "sufficiency" },
+        { "efficiency", "fiercely" },
+        { "there", "hear" },
+        { "defence", "disern" },
+        { "befriend", "different" },
+        { "brand", "reread" },
+        { "teachers", "nearest" },
+        { "veteran", "wheaten" }
+    };
+    for (auto ab : abs)
+    {
+        string a = ab[0];
+        string b = ab[1];
+        LSEditDistCaller(a, b);
+    }
 }

@@ -100,8 +100,8 @@ void HuffmanCodingCaller(vector<pair<char, int>> chars);
 //void ChessBoardTilingTest(int n);
 
 //Dynamic programming
-void DP0_1KnapsackCaller(int n, int W, int *w, int *v);
-void LSEditDistCaller(const string &x, const string &y);
+//void DP0_1KnapsackCaller(int n, int W, int *w, int *v);
+//void LSEditDistCaller(const string &x, const string &y);
 void TestTSP_BHK_DPv(int n, int *aMat);
 void TestTSP_BHK_DP(int n, int *aMat);
 void TestTSP_BHK_DP_N(int n, const char *cityNames[], int *aMat);

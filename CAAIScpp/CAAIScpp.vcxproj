@@ -199,7 +199,6 @@
     <ClCompile Include="src\test\TestBB0_1Knapsack.cpp" />
     <ClCompile Include="src\test\TestClassical.cpp" />
     <ClCompile Include="src\test\TestDFSM_BFSM.cpp" />
-    <ClCompile Include="src\test\TestDP0_1Knapsack.cpp" />
     <ClCompile Include="src\test\TestES0_1KnapsackA.cpp" />
     <ClCompile Include="src\test\TestES0_1KnapsackR.cpp" />
     <ClCompile Include="src\test\TestESTSP18.cpp" />
@@ -213,7 +212,6 @@
     <ClCompile Include="src\test\TestEuclidGCDSteps.cpp" />
     <ClCompile Include="src\test\TestEuclidGCDR.cpp" />
     <ClCompile Include="src\test\TestHash.cpp" />
-    <ClCompile Include="src\test\TestLSEditDist.cpp" />
     <ClCompile Include="src\test\TestPrimality.cpp" />
     <ClCompile Include="src\test\TestRandomNumber.cpp" />
     <ClCompile Include="src\test\TestRSA.cpp" />

@@ -8,7 +8,8 @@ void MatrixChainDP(vector<int> p);
 void GenOrder(int i, int j);
 void Initialization();
 void ShowInput(vector<int> p);
-void ShowInterim();
+void Show_mMatrix();
+void Show_sMatrix();
 void ShowResult();
 static int N;
 static vector<vector<int>> m, s;
@@ -19,7 +20,8 @@ void MatrixChainDPCaller(vector<int> p)
     ShowInput(p);
     Initialization();
     MatrixChainDP(p);
-    ShowInterim();
+    Show_mMatrix();
+    Show_sMatrix();
     ShowResult();
 }
 void MatrixChainDP(vector<int> p)
@@ -78,7 +80,7 @@ void ShowInput(vector<int> p)
     }
     printf("\n");
 }
-void ShowInterim()
+void Show_mMatrix()
 {
     int k = to_string(m[0][N - 1]).length();
     printf("The m matrix:\n");
@@ -95,6 +97,9 @@ void ShowInterim()
             printf(" %*d", k, m[i][j]);
         printf("\n");
     }
+}
+void Show_sMatrix()
+{
     printf("The s matrix:\n");
     printf("%3c", ' ');
     for (int i = 0; i < N; i++)

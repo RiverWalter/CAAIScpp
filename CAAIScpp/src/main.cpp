@@ -34,12 +34,12 @@ int main()
     //TestKColoring(3);
 
     //***Dynamic programming
-    //TestDP0_1Knapsack();
-	//TestLSEditDist();
+    //TestLSEditDist();
+    //TestMatrixChainDP();
+    TestDP0_1Knapsack();
     //TestTSP_BHK_DP_N_SD(17);
     //TestTSP_BHK_DPA();
     //TestTSP_BHK_DPvA();
-    //TestMatrixChainDP();
     //TestDPTSP();
 
     //***Threading
@@ -47,7 +47,7 @@ int main()
 
     //Divide and conquer
     //TestBinarySearch(8);
-    TestChessBoardTiling(4);
+    //TestChessBoardTiling(4);
 
     //***Exhaustive search
     //TestESTSP_UT_SD_P(7, 7);

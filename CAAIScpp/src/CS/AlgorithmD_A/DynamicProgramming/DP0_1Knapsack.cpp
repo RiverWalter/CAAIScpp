@@ -1,7 +1,8 @@
 #include <vector>
 using namespace std;
-static int DP0_1Knapsack(int n, int W, int *w, int *v);
-static void Output(int n, int W, int *w, int *v, int OptV);
+namespace NS_DP0_1Knapsack {
+int DP0_1Knapsack(int n, int W, int *w, int *v);
+void Output(int n, int W, int *w, int *v, int OptV);
 static vector<vector<int>> V;
 static vector<int> x;
 void DP0_1KnapsackCaller(int n, int W, int *w, int *v)
@@ -12,7 +13,7 @@ void DP0_1KnapsackCaller(int n, int W, int *w, int *v)
     int OptV = DP0_1Knapsack(n, W, w, v);
     Output(n, W, w, v, OptV);
 }
-static int DP0_1Knapsack(int n, int W, int *w, int *v)
+int DP0_1Knapsack(int n, int W, int *w, int *v)
 {
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= W; j++)
@@ -31,7 +32,7 @@ static int DP0_1Knapsack(int n, int W, int *w, int *v)
         {   x[i] = 1; j -= w[i - 1];  }
     return V[n][W];
 }
-static void Output(int n, int W, int *w, int *v, int OptV)
+void Output(int n, int W, int *w, int *v, int OptV)
 {
     //inputs
     printf("DP to solve 0-1 knapsack:\n");
@@ -63,4 +64,35 @@ static void Output(int n, int W, int *w, int *v, int OptV)
     for (int i = 1; i <= n; i++)
         printf("%2d", x[i]);
     printf("\n\n");
+}
+} //namespace NS_DP0_1Knapsack
+using namespace NS_DP0_1Knapsack;
+void TestDP0_1Knapsack()
+{
+    vector<int> N = { 4, 4, 4, 5, 5, 4, 7 };
+    vector<int> W = { 16, 7, 10, 10, 15, 8, 15 };
+    vector<vector<int>> w = {
+        { 2, 5, 10, 5 },
+        { 3, 5, 2, 1 },
+        { 5, 4, 6, 3 },
+        { 2, 2, 6, 5, 4 },
+        { 12, 2, 1, 4, 1 },
+        { 5, 4, 3, 2 },
+        { 2, 3, 5, 7, 1, 4, 1 }
+    };
+    vector<vector<int>> v = {
+        { 40, 10, 50, 30 },
+        { 9, 10, 7, 4 },
+        { 10, 40, 30, 50 },
+        { 6, 3, 5, 4, 6 },
+        { 4, 2, 1, 10, 2 },
+        { 15, 10, 6, 2 },
+        { 10, 5, 15, 7, 6, 18, 3 }
+    };
+
+    int m = N.size();
+    for (int i = 0; i < m; i++)
+    {
+        DP0_1KnapsackCaller(N[i], W[i], &w[i][0], &v[i][0]);
+    }
 }
