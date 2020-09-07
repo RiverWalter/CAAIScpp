@@ -81,6 +81,7 @@ void TestChnRA();
 
 //Graph
 void TestDFSM_BFSM(char t);
+
 //Greedy search
 void TestKruskalMST(int v0 = 0);
 void TestPrimMST(int v0 = 0);

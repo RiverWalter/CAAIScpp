@@ -36,11 +36,11 @@ int main()
     //***Dynamic programming
     //TestLSEditDist();
     //TestMatrixChainDP();
-    TestDP0_1Knapsack();
+    //TestDP0_1Knapsack();
+    //TestDPTSP();
     //TestTSP_BHK_DP_N_SD(17);
     //TestTSP_BHK_DPA();
     //TestTSP_BHK_DPvA();
-    //TestDPTSP();
 
     //***Threading
     //TestESTSP_UT_SD_TH(7, 7);
@@ -89,10 +89,12 @@ int main()
     //TestDFSM_BFSM('B');
     //DFSCaller();
     //Gready search
-    //TestKruskalMST(0);
-    //TestPrimMST(0);
+
+    //Greedy
     //TestDijkstraSSSP(5);
-    //TestHuffmanCoding();
+    //TestPrimMST(0);
+    //TestKruskalMST(0);
+    TestHuffmanCoding();
 
     //Branch and Bound
     //TestBB0_1Knapsack();

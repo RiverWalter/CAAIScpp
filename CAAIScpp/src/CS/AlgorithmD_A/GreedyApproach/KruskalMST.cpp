@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <vector>
 #include <algorithm>
+namespace NS_KruskalMST {
 using namespace std;
-static void KruskalMST();
-static int FindSet(int u);
-static void UnionSets(int u, int v);
-static void Initialization();
-static void GenEdges();
-static void MakeSet();
-static void Output(int v0);
+void KruskalMST();
+int FindSet(int u);
+void UnionSets(int u, int v);
+void Initialization();
+void GenEdges();
+void MakeSet();
+void Output(int v0);
+#define INF INT_MAX
 static int N;
 static vector<vector<int>> WMatrix;
 static vector<pair<int, pair<int, int>>> Edges;
@@ -31,7 +33,7 @@ void KruskalMSTCaller(int n,
     KruskalMST();
     Output(v0);
 }
-static void KruskalMST()
+void KruskalMST()
 {
     for (auto &e: Edges)
     {
@@ -48,7 +50,7 @@ static void KruskalMST()
         }
     }
 }
-static int FindSet(int u)
+int FindSet(int u)
 {
     while (u != DisjointSet[u].Parent)
         u = FindSet(DisjointSet[u].Parent);
@@ -57,7 +59,7 @@ static int FindSet(int u)
         //    Find(DisjointSet[u].Parent);
     return u;
 }
-static void UnionSets(int u, int v)
+void UnionSets(int u, int v)
 {
     if (DisjointSet[u].Rank >= DisjointSet[v].Rank)
         DisjointSet[v].Parent = u;
@@ -66,32 +68,32 @@ static void UnionSets(int u, int v)
     if (DisjointSet[u].Rank == DisjointSet[v].Rank)
         DisjointSet[u].Rank++;
 }
-static void Initialization()
+void Initialization()
 {
     GenEdges();
     sort(Edges.begin(), Edges.end());
     MakeSet();
     MST.clear();
 }
-static void GenEdges()
+void GenEdges()
 {
     Edges.clear();
     //Traverse the upper triangle of WMatrix
     for (int i = 0; i < N - 1; i++)
     {
         for (int j = i + 1; j < N; j++)
-            if (WMatrix[i][j] != INT_MAX)
+            if (WMatrix[i][j] != INF)
                 Edges.push_back({ WMatrix[i][j], 
                     {i, j} });
     }
 }
-static void MakeSet()
+void MakeSet()
 {
     DisjointSet.clear();
     for (int i = 0; i < N; i++)
         DisjointSet.push_back(DJSNode(i));
 }
-static void OutputWMatrix()
+void OutputWMatrix()
 {
     printf("N = %d\n", N);
     printf("The weight matrix:\n");
@@ -103,14 +105,14 @@ static void OutputWMatrix()
     {
         printf("%3d", i + 1);
         for (auto j : WMatrix[i])
-            if (j < INT_MAX)
+            if (j < INF)
                 printf("%3d", j);
             else
                 printf("%3c", '*');
         printf("\n");
     }
 }
-static void OutputPath(int u)
+void OutputPath(int u)
 {
     if (Prev[u] == -1)
         printf("%d", u + 1);
@@ -120,7 +122,7 @@ static void OutputPath(int u)
         printf("-%d", u + 1);
     }
 }
-static void GenMSTList()
+void GenMSTList()
 {
     MSTList.clear();
     MSTList.resize(N);
@@ -131,7 +133,7 @@ static void GenMSTList()
     }
 
 }
-static void GenPrev(int v)
+void GenPrev(int v)
 {
     for (auto &u : MSTList[v])
         if (u != -1)
@@ -143,7 +145,7 @@ static void GenPrev(int v)
             GenPrev(u);
         }
 }
-static void Output(int v0)
+void Output(int v0)
 {
     printf("Kruskal's MST algorithm\n");
     OutputWMatrix();
@@ -162,8 +164,8 @@ static void Output(int v0)
     for (auto &e : MST)
         printf(" %d-%d  %d\n", e.first + 1, e.second + 1,
             WMatrix[e.first][e.second]);
-    printf("\nTotal MST weight: %d\n", wSum);
-    printf("The MST paths from node %d:\n", v0 + 1);
+    printf("Total MST weight: %d\n", wSum);
+    printf("The MST paths from vertex %d:\n", v0 + 1);
     for (int u = 0; u < N; u++)
         if (u != v0)
         {
@@ -171,4 +173,51 @@ static void Output(int v0)
             OutputPath(u);
             printf("\n");
         }
+    printf("\n");
+}
+} //namespace NS_KruskalMST
+using namespace NS_KruskalMST;
+void TestKruskalMST(int v0 = 0)
+{
+    vector<int> n = { 5, 6, 9 };
+    vector<vector<vector<int>>> w = {
+        //https://www.geeksforgeeks.org/
+        //prims-minimum-spanning-tree-mst-greedy-algo-5/
+        {
+            {   0,  2,INF,  6,INF },
+            {   2,  0,  3,  8,  5 },
+            { INF,  3,  0,INF,  7 },
+            {   6,  8,INF,  0,  9 },
+            { INF,  5,  7,  9,  0 }
+        },
+        // Dijkstra's algorithm on Wikipedia
+        {
+            {   0,  7,  9,INF,INF, 14 },
+            {   7,  0, 10, 15,INF,INF },
+            {   9, 10,  0, 11,INF,  2 },
+            { INF, 15, 11,  0,  6,INF },
+            { INF,INF,INF,  6,  0,  9 },
+            {  14,INF,  2,INF,  9,  0 },
+        },
+        //https://www.geeksforgeeks.org/
+        //kruskals-minimum-spanning-tree-using-stl-in-c/
+        {
+            {   0,  4,INF,INF,INF,INF,INF,  8,INF },
+            {   4,  0,  8,INF,INF,INF,INF, 11,INF },
+            { INF,  8,  0,  7,INF,  4,INF,INF,  2 },
+            { INF,INF,  7,  0,  9, 14,INF,INF,INF },
+            { INF,INF,INF,  9,  0, 10,INF,INF,INF },
+            { INF,INF,  4, 14, 10,  0,  2,INF,INF },
+            { INF,INF,INF,INF,INF,  2,  0,  1,  6 },
+            {   8, 11,INF,INF,INF,INF,  1,  0,  7 },
+            { INF,INF,  2,INF,INF,INF,  6,  7,  0 },
+        },
+    };
+    int k = n.size();
+    for (int i = 0; i < k; i++)
+    {
+        if (v0 > n[i] - 1)
+            v0 = n[i] - 1;
+        KruskalMSTCaller(n[i], w[i], v0);
+    }
 }

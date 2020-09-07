@@ -1,21 +1,24 @@
 #include <stdio.h>
 #include <vector>
+namespace NS_DijkstraSSSP {
 using namespace std;
-static void DijkstraSSSP();
-static void Initialization(int v0);
-static void GenAdjList();
-static int ExtractMin();
-static void SiftDown(int i);
-static void SiftUp(int i);
-static void InsertQ(int w);
-static void OutputDistMatrix();
-static void Output(int v0);
+void DijkstraSSSP();
+void Initialization(int v0);
+void GenAdjList();
+int ExtractMin();
+void SiftDown(int i);
+void SiftUp(int i);
+void InsertQ(int w);
+void OutputDistMatrix();
+void Output(int v0);
+#define INF INT_MAX
 static int N;
 static vector<vector<int>> W, AdjList;
 static vector<int> Dist, Prev, Q;
 //-1: Free, -2: Finished, Other(>=0): Position in Q
 static vector<int> S;
-void DijkstraSSSPCaller(int n, vector<vector<int>> &w, int v0)
+void DijkstraSSSPCaller(int n,
+    vector<vector<int>> &w, int v0)
 {
     N = n;
     W = w;
@@ -24,7 +27,7 @@ void DijkstraSSSPCaller(int n, vector<vector<int>> &w, int v0)
     DijkstraSSSP();
     Output(v0);
 }
-static void DijkstraSSSP()
+void DijkstraSSSP()
 {
     int v, d;
     while (!Q.empty())
@@ -46,7 +49,7 @@ static void DijkstraSSSP()
             }
     }
 }
-static int ExtractMin()
+int ExtractMin()
 {
     swap(Q.front(), Q.back());
     S[Q.front()] = 0;
@@ -57,7 +60,7 @@ static int ExtractMin()
         SiftDown(0);
     return w;
 }
-static void SiftDown(int i)
+void SiftDown(int i)
 {
     while ((i = (i << 1) + 1) < Q.size()) {
         if (i + 1 < Q.size() && Dist[Q[i + 1]] < Dist[Q[i]])
@@ -72,7 +75,7 @@ static void SiftDown(int i)
         else break;
     }
 }
-static void SiftUp(int i)
+void SiftUp(int i)
 {
     int p;
     while (i > 0 && Dist[Q[i]] < Dist[Q[p = i - 1 >> 1]]) {
@@ -82,18 +85,18 @@ static void SiftUp(int i)
         i = p;
     }
 }
-static void InsertQ(int w)
+void InsertQ(int w)
 {
     Q.push_back(w);
     int n = int(Q.size() - 1);
     S[w] = n;
     SiftUp(n);
 }
-static void Initialization(int v0)
+void Initialization(int v0)
 {
     GenAdjList();
     Dist.clear();
-    Dist.resize(N, INT_MAX);
+    Dist.resize(N, INF);
     Dist[v0] = 0;
     Prev.clear();
     Prev.resize(N, -1);
@@ -103,18 +106,18 @@ static void Initialization(int v0)
     S.resize(N, -1);
     S[v0] = 0;
 }
-static void GenAdjList()
+void GenAdjList()
 {
     AdjList.clear();
     for (int i = 0; i < N; i++)
     {
         AdjList.push_back(vector<int>());
         for (int j = 0; j < N; j++)
-            if (W[i][j] && W[i][j] != INT_MAX)
+            if (W[i][j] && W[i][j] != INF)
                 AdjList[i].push_back(j);
     }
 }
-static void OutputDistMatrix()
+void OutputDistMatrix()
 {
     printf("N = %d\n", N);
     printf("The distance matrix:\n");
@@ -126,14 +129,14 @@ static void OutputDistMatrix()
     {
         printf("%3d", i + 1);
         for (auto j : W[i])
-            if (j < INT_MAX)
+            if (j < INF)
                 printf("%3d", j);
             else
                 printf("%3c", '*');
         printf("\n");
     }
 }
-static void OutputPath(int u)
+void OutputPath(int u)
 {
     if (Prev[u] == -1)
         printf("%d", u + 1);
@@ -143,9 +146,10 @@ static void OutputPath(int u)
         printf("-%d", u + 1);
     }
 }
-static void Output(int v0)
+void Output(int v0)
 {
-    printf("\nThe shortest distance and path from node %d:\n", v0 + 1);
+    printf("The shortest distance and path from node %d:\n",
+        v0 + 1);
     for (int u = 0; u < N; u++)
         if (u != v0)
         {
@@ -154,4 +158,51 @@ static void Output(int v0)
             OutputPath(u);
             printf("\n");
         }
+    printf("\n");
+}
+} //namespace NS_DijkstraSSSP
+using namespace NS_DijkstraSSSP;
+void TestDijkstraSSSP(int v0 = 0)
+{
+    vector<int> n = { 5, 6, 9 };
+    vector<vector<vector<int>>> w = {
+        //https://www.geeksforgeeks.org/
+        //prims-minimum-spanning-tree-mst-greedy-algo-5/
+        {
+            {   0,  2,INF,  6,INF },
+            {   2,  0,  3,  8,  5 },
+            { INF,  3,  0,INF,  7 },
+            {   6,  8,INF,  0,  9 },
+            { INF,  5,  7,  9,  0 }
+        },
+        // Dijkstra's algorithm on Wikipedia
+        {
+            {   0,  7,  9,INF,INF, 14 },
+            {   7,  0, 10, 15,INF,INF },
+            {   9, 10,  0, 11,INF,  2 },
+            { INF, 15, 11,  0,  6,INF },
+            { INF,INF,INF,  6,  0,  9 },
+            {  14,INF,  2,INF,  9,  0 },
+        },
+        //https://www.geeksforgeeks.org/
+        //kruskals-minimum-spanning-tree-using-stl-in-c/
+        {
+            {   0,  4,INF,INF,INF,INF,INF,  8,INF },
+            {   4,  0,  8,INF,INF,INF,INF, 11,INF },
+            { INF,  8,  0,  7,INF,  4,INF,INF,  2 },
+            { INF,INF,  7,  0,  9, 14,INF,INF,INF },
+            { INF,INF,INF,  9,  0, 10,INF,INF,INF },
+            { INF,INF,  4, 14, 10,  0,  2,INF,INF },
+            { INF,INF,INF,INF,INF,  2,  0,  1,  6 },
+            {   8, 11,INF,INF,INF,INF,  1,  0,  7 },
+            { INF,INF,  2,INF,INF,INF,  6,  7,  0 },
+        },
+    };
+    int k = n.size();
+    for (int i = 0; i < k; i++)
+    {
+        if (v0 > n[i] - 1)
+            v0 = n[i] - 1;
+        DijkstraSSSPCaller(n[i], w[i], v0);
+    }
 }

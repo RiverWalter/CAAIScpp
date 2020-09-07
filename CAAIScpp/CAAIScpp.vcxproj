@@ -191,10 +191,6 @@
     <ClCompile Include="src\ExhaustiveSearch\PrimalTestTrialDiv.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\test\Backtracking\TestKColoring.cpp" />
-    <ClCompile Include="src\test\GraphAlgorithms\TestDijkstraSSSP.cpp" />
-    <ClCompile Include="src\test\GraphAlgorithms\TestKruskalMST.cpp" />
-    <ClCompile Include="src\test\GraphAlgorithms\TestPrimMST.cpp" />
-    <ClCompile Include="src\test\GreedyApproach\TestHuffmanCoding.cpp" />
     <ClCompile Include="src\test\test.cpp" />
     <ClCompile Include="src\test\TestBB0_1Knapsack.cpp" />
     <ClCompile Include="src\test\TestClassical.cpp" />
