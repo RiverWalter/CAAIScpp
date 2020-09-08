@@ -7,8 +7,8 @@
 #include <climits>
 #include <tuple>
 #include <random>
-using namespace std;
 namespace NS_BBTSP {
+using namespace std;
 #define INF INT_MAX
 static int OptimalDist = INF;
 static vector<pair<int , int>> OptimalPath;

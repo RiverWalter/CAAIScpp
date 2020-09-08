@@ -2,8 +2,8 @@
 #include <vector>
 #include <numeric>
 #include <algorithm>
-using namespace std;
 namespace NS_ChnRA {
+using namespace std;
 struct Clsdxy {
   int d; int x; int y;
   Clsdxy(int ad, int ax, int ay) :
@@ -15,7 +15,8 @@ int ChnRA(vector<int>& a, vector<int>& n)
 {
   int N = a.size();
   vector<int> m, m_inv, c;
-  int M = accumulate(n.begin(), n.end(), 1, multiplies<int>());
+  int M = accumulate(n.begin(), n.end(), 1, 
+    multiplies<int>());
   for (int i = 0; i < N; i++)
     m.push_back(M / n[i]);
   for (int i = 0; i < N; i++)
@@ -23,7 +24,8 @@ int ChnRA(vector<int>& a, vector<int>& n)
   for (int i = 0; i < N; i++)
     c.push_back(m[i] * (m_inv[i] % n[i]));
   vector<int> ac(N);
-  transform(a.begin(), a.end(), c.begin(), ac.begin(), multiplies<int>());
+  transform(a.begin(), a.end(), c.begin(), ac.begin(), 
+    multiplies<int>());
   int A = accumulate(ac.begin(), ac.end(), 0) % M;
   return A;
 }
@@ -54,29 +56,37 @@ void TestChnRA()
   vector<vector<int>> a = {
     {2, 3}, //CLRS, Sec. 31.5, example; 42
     {4, 5}, //CLRS, Sec. 31.5, exercise 1; 49
-    //https://www.directknowledge.com/chinese-remainder-theorem/
+    //https://www.directknowledge.com/
+    //chinese-remainder-theorem/
     {15, 16}, //96
-    //https://www.directknowledge.com/chinese-remainder-theorem/
+    //https://www.directknowledge.com/
+    //chinese-remainder-theorem/
     {3, 2, 4}, //158
     {1, 2, 3}, //CLRS, Sec. 31.5, exercise 2; 10
     {2, 3, 2}, //《孙子算经》第二十六题; 23
-    //https://www.britannica.com/science/Chinese-remainder-theorem
+    //https://www.britannica.com/science/
+    //Chinese-remainder-theorem
     {0, 6, 10}, //370
-    //https://brilliant.org/wiki/chinese-remainder-theorem/
+    //https://brilliant.org/wiki/
+    //chinese-remainder-theorem/
     {1, 4, 6}, //34;
   };
   vector<vector<int>> n = {
     {5, 13}, //CLRS, Sec. 31.5, example
     {5, 11}, //CLRS, Sec. 31.5, exercise 1
-    //https://www.directknowledge.com/chinese-remainder-theorem/
+    //https://www.directknowledge.com/
+    //chinese-remainder-theorem/
     {27, 20}, //96
-    //https://www.directknowledge.com/chinese-remainder-theorem/
+    //https://www.directknowledge.com/
+    //chinese-remainder-theorem/
     {5, 6, 7}, //158
     {9, 8, 7}, //CLRS, Sec. 31.5, exercise 2
     {3, 5, 7}, //《孙子算经》第二十六题
-    //https://www.britannica.com/science/Chinese-remainder-theorem;
+    //https://www.britannica.com/science/
+    //Chinese-remainder-theorem;
     {5, 7, 12}, //370
-    //https://brilliant.org/wiki/chinese-remainder-theorem/
+    //https://brilliant.org/wiki/
+    //chinese-remainder-theorem/
     {3, 5, 7}, //34;
   };
   int N = a.size();
@@ -94,6 +104,7 @@ void TestChnRA()
     printf("\n");
     int A = ChnRA(a[i], n[i]);
     printf(" A: %d\n", A);
+    printf("\n");
   }
 }
 void TestMODInverse()
@@ -106,7 +117,7 @@ void TestMODInverse()
   };
   for (int i = 0; i < N; i++) {
     int inv = GetMODInverse(aN[i][0], aN[i][1]);
-    printf("%2d: a=%d, N=%d, inv(a) = %d (mod N)\n", i,
-      aN[i][0], aN[i][1], inv);
+    printf("%2d: a=%d, N=%d, inv(a) = %d (mod N)\n", 
+      i, aN[i][0], aN[i][1], inv);
   }
 }

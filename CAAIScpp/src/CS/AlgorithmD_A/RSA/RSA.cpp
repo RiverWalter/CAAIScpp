@@ -2,8 +2,8 @@
 #include <vector>
 #include <random>
 #include <algorithm>
-using namespace std;
 namespace NS_RSA {
+using namespace std;
 #define MRPT_S 3
 random_device rdev{};
 default_random_engine e{ rdev() };
@@ -37,6 +37,7 @@ void RSA(int m)
     printf("\tn = %d, phi(n) = %d\n", n, phi_n);
     printf("\te = %d, d = %d\n", e, d);
     printf("\tm = %d, c = %d, dc = %d\n", m, c, dc);
+    printf("\n");
 }
 int Get_p()
 {

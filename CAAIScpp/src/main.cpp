@@ -20,7 +20,7 @@ int main()
     //TestParityCheck(4, 30, 0);
 
     //RSA
-    //TestRSA();
+    TestRSA();
     //TestMRPT();
     //TestRS4ME();
     //TestChnRA();
@@ -98,7 +98,7 @@ int main()
     //Branch and Bound
     //TestBB0_1Knapsack();
     //TestBBTSP();
-    TestBBTSPRandom();
+    //TestBBTSPRandom();
     //TestBBTSPt();
     //TestBBTSPtd();
 

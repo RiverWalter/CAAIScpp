@@ -1,4 +1,5 @@
 #include <stdio.h>
+namespace NS_ExtEuclidGCD {
 using namespace std;
 struct Clsdxy {
   int d; int x; int y;
@@ -16,6 +17,8 @@ Clsdxy ExtEuclidGCD(int a, int b)
   else
     return Clsdxy(a, 1, 0);
 }
+} //namespace NS_ExtEuclidGCD
+using namespace NS_ExtEuclidGCD;
 void TestExtEuclidGCD()
 {
 #define N 22
@@ -53,8 +56,10 @@ void TestExtEuclidGCD()
     { 26187, 1533 }
   };
   for (int i = 0; i < N; i++) {
-    auto dxy = ExtEuclidGCD(ab[i][0], ab[i][1]);
+    int a = ab[i][0];
+    int b = ab[i][1];
+    auto dxy = ExtEuclidGCD(a, b);
     printf("%2d: %d = %d*%d + %d*%d\n", i,
-      dxy.d, ab[i][0], dxy.x, ab[i][1], dxy.y);
+      dxy.d, a, dxy.x, b, dxy.y);
   }
 }
