@@ -1,14 +1,14 @@
 #include <vector>
+namespace NS_BTKColoring {
 using namespace std;
-static void KColoring(int v);
-static void KColoringStack();
-static int CheckColoring(int v);
-static void Output();
-static vector<int> Colors;
+void KColoring(int v);
+void KColoringStack();
+int CheckColoring(int v);
+void Output();
 static int N, K;
 static vector<vector<int>> AdjM;
+static vector<int> Colors;
 static vector<int> Stack;
-
 void BTKColoringCaller(int n, int k, 
     vector<vector<int>> &adjM)
 {
@@ -23,15 +23,16 @@ void BTKColoringCaller(int n, int k,
     //KColoringStack();
     Output();
 }
-static void KColoring(int v)
+void KColoring(int v)
 {
     int c = 1;
     while (!Colors[N-1] && c <= K)
     {
         Colors[v] = c;
         if (CheckColoring(v) == -1)
-            if (v < N - 1)
+            if (v < N - 1) {
                 KColoring(v + 1);
+            }
             else
                 break;
         c++;
@@ -39,14 +40,14 @@ static void KColoring(int v)
     if (!Colors[N - 1] && c > K)
         Colors[v] = 0;
 }
-static int CheckColoring(int v)
+int CheckColoring(int v)
 {
     for (int u = 0; u < v; u++)
         if (AdjM[v][u] && Colors[u] == Colors[v])
             return u;
     return -1;
 }
-static void KColoringStack()
+void KColoringStack()
 {
     Stack.clear();
     Stack.push_back(1);
@@ -81,7 +82,7 @@ static void KColoringStack()
             Colors[v] = 0;
     } //while (!Stack.empty())
 }
-static void OutputAdjMatrix()
+void OutputAdjMatrix()
 {
     printf("N = %d.\n", N);
     printf("The adjacency matrix:\n");
@@ -97,21 +98,42 @@ static void OutputAdjMatrix()
         printf("\n");
     }
 }
-static void Output()
+void Output()
 {
-    printf("\nK coloring with backtracking.\n");
-    printf("\nThe input:\n");
+    printf("K coloring with backtracking.\n");
+    printf("The input graph:\n");
     OutputAdjMatrix();
     printf("K = %d.\n", K);
-    printf("\nThe result:\n");
+    printf("The result:\n");
     if (!Colors[N - 1])
-        printf("The graph cann't be colored with %d colors.\n", K);
+    {
+      printf("The graph cann't be colored ");
+      printf("with %d colors.\n", K);
+    }
     else
     {
-        printf("The graph can be colored with %d colors:\n", K);
+        printf("The graph can be colored ");
+        printf("with %d colors:\n", K);
         for (int v = 0; v < N; v++)
             printf("(%d,%d)", v, Colors[v]);
         printf("\n");
     }
 }
-
+} //namespace NS_BTKColoring
+using namespace NS_BTKColoring;
+void TestBTKColoring(int K = 3)
+{
+  vector<vector<vector<int>>> adjM = {
+    //06U-01: Dijkstra's algorithm on Wikipedia
+    {
+        { 0, 1, 1, 0, 0, 1 },
+        { 1, 0, 1, 1, 0, 0 },
+        { 1, 1, 0, 1, 0, 1 },
+        { 0, 1, 1, 0, 1, 0 },
+        { 0, 0, 0, 1, 0, 1 },
+        { 1, 0, 1, 0, 1, 0 },
+    },
+  };
+  for (size_t i = 0; i < adjM.size(); i++)
+    BTKColoringCaller(adjM[i].size(), K, adjM[i]);
+}

@@ -32,9 +32,6 @@
     <ClCompile Include="src\Classical\BinarySearchR.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BKnQueens.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BTKColoring.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -165,9 +162,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\ExhaustiveSearch\PrimalTestTrialDiv.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\Backtracking\TestKColoring.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test.cpp">

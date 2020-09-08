@@ -130,7 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Classical\BinarySearchR.cpp" />
-    <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BKnQueens.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BTKColoring.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BTnQueens.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\BranchAndBound\BB0_1Knapsack.cpp" />
@@ -190,7 +189,6 @@
     <ClCompile Include="src\ExhaustiveSearch\PermutingHeap.cpp" />
     <ClCompile Include="src\ExhaustiveSearch\PrimalTestTrialDiv.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\test\Backtracking\TestKColoring.cpp" />
     <ClCompile Include="src\test\test.cpp" />
     <ClCompile Include="src\test\TestBB0_1Knapsack.cpp" />
     <ClCompile Include="src\test\TestClassical.cpp" />

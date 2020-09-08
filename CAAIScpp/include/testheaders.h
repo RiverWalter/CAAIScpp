@@ -96,4 +96,5 @@ void TestBBTSP();
 void TestBBTSPRandom();
 
 //Backtracking
-void TestKColoring(int K = 3);
+void TestBTnQueens(int n = 4);
+void TestBTKColoring(int K = 3);

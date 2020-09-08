@@ -29,9 +29,8 @@ int main()
     //TestExtEucGCDNonRec();
 
     //Backtracking
-    //BTnQueensCaller(4);
-    //BKnQueensCaller(8);
-    //TestKColoring(3);
+    //TestBTnQueens(8);
+    TestBTKColoring(3);
 
     //***Dynamic programming
     //TestLSEditDist();
@@ -58,6 +57,7 @@ int main()
     //TestESTSP18();
     //TestESTSP18SD(10);
 
+    //Exhaustive Search
     //TestSubsetting(4);
     //TestPermuting(4);
     //TestPermutingSJT(3);
@@ -88,13 +88,12 @@ int main()
     //TestDFS_BFS('D');
     //TestDFSM_BFSM('B');
     //DFSCaller();
-    //Gready search
-
-    //Greedy
+    
+    //Greedy Algorithms
     //TestDijkstraSSSP(5);
     //TestPrimMST(0);
     //TestKruskalMST(0);
-    TestHuffmanCoding();
+    //TestHuffmanCoding();
 
     //Branch and Bound
     //TestBB0_1Knapsack();

@@ -1,10 +1,11 @@
 #include <vector>
+namespace NS_BTnQueens {
 using namespace std;
-static void BTnQueens(int row);
-static bool CheckPlacing(int row, int col);
-static void Output();
-static vector<int> Col;
+void BTnQueens(int row);
+bool CheckPlacing(int row, int col);
+void Output();
 static int N;
+static vector<int> Col;
 static bool Done;
 void BTnQueensCaller(int n)
 {
@@ -14,7 +15,7 @@ void BTnQueensCaller(int n)
     BTnQueens(0);
     Output();
 }
-static void BTnQueens(int row)
+void BTnQueens(int row)
 {
     for (int col = 0; !Done && col < N; col++)
     {
@@ -23,12 +24,13 @@ static void BTnQueens(int row)
             Col[row] = col;
             if (row == N - 1)
                 Done = true;
-            else
-                BTnQueens(row + 1);
+            else {
+              BTnQueens(row + 1);
+            }
         }
     }
 }
-static bool CheckPlacing(int row, int col)
+bool CheckPlacing(int row, int col)
 {
     for (int r = 0; r < row; r++)
         if (Col[r] == col || 
@@ -36,10 +38,15 @@ static bool CheckPlacing(int row, int col)
             return false;
     return true;
 }
-static void Output()
+void Output()
 {
     printf("Placement for %d-Queens: \n", N);
     for (int row = 0; row < N; row++)
         printf("(%d,%d)\n", row + 1, Col[row] + 1);
 }
-
+} //namespace NS_BTnQueens
+using namespace NS_BTnQueens;
+void TestBTnQueens(int n)
+{
+  BTnQueensCaller(n);
+}
