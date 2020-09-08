@@ -1,26 +1,29 @@
 #include <stdio.h>
 #include <vector>
 #include <algorithm>
+namespace NS_BB0_1Knapsack {
 using namespace std;
-static void BB0_1Knapsack();
-static void Initialization(int *v, int *w);
+void BB0_1Knapsack();
+void Initialization(int *v, int *w);
 struct stItem {
     int w; int v;
     stItem(int pw, int pv) : w(pw), v(pv) {}
 };
 struct stNode {
-    int d; int w; int v; vector<int>items; double boundV;
+    int d; int w; int v; vector<int>items; 
+    double boundV;
     stNode() : d(0), w(0), v(0) {}
-    stNode(int pd, int pw, int pv) : d(pd), w(pw), v(pv) {}
+    stNode(int pd, int pw, int pv) : 
+        d(pd), w(pw), v(pv) {}
 };
-static stNode ExtractMax();
-static void SiftDown(int i);
-static void SiftUp(int i);
-static void InsertQ(stNode r);
-static double BoundV(const stNode& node);
-static void ShowInput(int *w, int *v);
-static void ShowSortedInput();
-static void Output();
+stNode ExtractMax();
+void SiftDown(int i);
+void SiftUp(int i);
+void InsertQ(stNode r);
+double BoundV(const stNode& node);
+void ShowInput(int *w, int *v);
+void ShowSortedInput();
+void Output();
 static int N, W, OptV;
 static vector<int> OptItems;
 static vector<stItem> Items;
@@ -34,7 +37,7 @@ void BB0_1KnapsackCaller(int n, int pW, int *w, int *v)
     BB0_1Knapsack();
     Output();
 }
-static void BB0_1Knapsack()
+void BB0_1Knapsack()
 {
     stNode q, r;
     while (!Q.empty())
@@ -64,7 +67,7 @@ static void BB0_1Knapsack()
         }
     }
 }
-static stNode ExtractMax()
+stNode ExtractMax()
 {
     swap(Q.front(), Q.back());
     stNode q = Q.back();
@@ -73,11 +76,11 @@ static stNode ExtractMax()
         SiftDown(0);
     return q;
 }
-static void SiftDown(int i)
+void SiftDown(int i)
 {
     bool done = false;
     while (!done && (i = (i << 1) + 1) < Q.size()) {
-        if (i + 1 < Q.size() && Q[i + 1].boundV > Q[i].boundV)
+        if (i+1 < Q.size() && Q[i+1].boundV > Q[i].boundV)
             i++;
         int p = i - 1 >> 1;
         if (Q[p].boundV < Q[i].boundV)
@@ -85,20 +88,20 @@ static void SiftDown(int i)
         else done = true;
     }
 }
-static void InsertQ(stNode r)
+void InsertQ(stNode r)
 {
     Q.push_back(r);
     SiftUp(Q.size() - 1);
 }
-static void SiftUp(int i)
+void SiftUp(int i)
 {
     int p;
-    while (i > 0 && Q[i].boundV > Q[p = i - 1 >> 1].boundV) {
+    while (i > 0 && Q[i].boundV > Q[p=i-1>>1].boundV) {
         swap(Q[i], Q[p]);
         i = p;
     }
 }
-static double BoundV(const stNode& node)
+double BoundV(const stNode& node)
 {
     double bv;
     if (node.w > W)
@@ -115,11 +118,12 @@ static double BoundV(const stNode& node)
             i++;
         }
         if (i <= N)
-            bv += (double)(W - bw) * Items[i - 1].v / Items[i - 1].w;
+            bv += (double)(W - bw) * Items[i - 1].v 
+                / Items[i - 1].w;
     }
     return bv;
 }
-static void Initialization(int *w, int *v)
+void Initialization(int *w, int *v)
 {
     ShowInput(w, v);
     Items.clear();
@@ -133,7 +137,7 @@ static void Initialization(int *w, int *v)
     Q[0].boundV = BoundV(Q[0]);
     ShowSortedInput();
 }
-static void ShowInput(int *w, int *v)
+void ShowInput(int *w, int *v)
 {
     printf("Branch bound to solve 0-1 knapsack:\n");
     printf("N: %d, W: %d\n", N, W);
@@ -149,7 +153,7 @@ static void ShowInput(int *w, int *v)
         printf("%3d", w[i]);
     printf("\n");
 }
-static void ShowSortedInput()
+void ShowSortedInput()
 {
     printf("Sorted items:\n");
     printf("%3c", 'i');
@@ -163,13 +167,46 @@ static void ShowSortedInput()
         printf("%3d", Items[i].w);
     printf("\n");
 }
-static void Output()
+void Output()
 {
-    printf("\nThe optimal value: %d\n", OptV);
+    printf("The optimal value: %d\n", OptV);
     for (int i = OptItems.size(); i < N; i++)
         OptItems.push_back(0);
     printf("The optimal solution:\n");
     for (int i = 0; i < N; i++)
         printf("%3d", OptItems[i]);
     printf("\n\n");
+}
+} //namespace NS_BB0_1Knapsack
+using namespace NS_BB0_1Knapsack;
+void TestBB0_1Knapsack()
+{
+    vector<int> N = { 4, 4, 4, 4, 5, 5, 4, 7 };
+    vector<int> W = { 11, 16, 7, 10, 10, 15, 8, 15 };
+    vector<vector<int>> w = {
+        { 1, 3, 3, 8 },
+        { 2, 5, 10, 5 },
+        { 3, 5, 2, 1 },
+        { 5, 4, 6, 3 },
+        { 2, 2, 6, 5, 4 },
+        { 12, 2, 1, 4, 1 },
+        { 3, 5, 2, 4 },
+        { 2, 3, 5, 7, 1, 4, 1 }
+    };
+    vector<vector<int>> v = {
+        { 3, 5, 4, 10 },
+        { 40, 10, 50, 30 },
+        { 9, 10, 7, 4 },
+        { 10, 40, 30, 50 },
+        { 6, 3, 5, 4, 6 },
+        { 4, 2, 1, 10, 2 },
+        { 6, 15, 2, 10 },
+        { 10, 5, 15, 7, 6, 18, 3 }
+    };
+    int m = (int)N.size();
+    for (int i = 0; i < m; i++)
+    {
+        BB0_1KnapsackCaller(N[i], W[i], 
+            &w[i][0], &v[i][0]);
+    }
 }

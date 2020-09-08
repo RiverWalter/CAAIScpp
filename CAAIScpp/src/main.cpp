@@ -30,7 +30,7 @@ int main()
 
     //Backtracking
     //TestBTnQueens(8);
-    TestBTKColoring(3);
+    //TestBTKColoring(3);
 
     //***Dynamic programming
     //TestLSEditDist();
@@ -97,10 +97,10 @@ int main()
 
     //Branch and Bound
     //TestBB0_1Knapsack();
+    //TestBBTSP();
+    TestBBTSPRandom();
     //TestBBTSPt();
     //TestBBTSPtd();
-    //TestBBTSP();
-    //TestBBTSPRandom();
 
     //***Classical
     //BinarySearchRTest(8);

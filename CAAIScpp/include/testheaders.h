@@ -90,10 +90,10 @@ void TestHuffmanCoding();
 
 //Branch and Bound
 void TestBB0_1Knapsack();
-int TestBBTSPtd();
-void TestBBTSPt();
 void TestBBTSP();
 void TestBBTSPRandom();
+int TestBBTSPtd();
+void TestBBTSPt();
 
 //Backtracking
 void TestBTnQueens(int n = 4);

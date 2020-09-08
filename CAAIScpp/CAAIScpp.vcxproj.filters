@@ -167,9 +167,6 @@
     <ClCompile Include="src\test\test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\TestBB0_1Knapsack.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\TestClassical.cpp">
       <Filter>源文件</Filter>
     </ClCompile>

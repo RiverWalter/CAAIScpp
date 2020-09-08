@@ -6,6 +6,7 @@
 #include <cstring>
 #include <climits>
 #include <tuple>
+#include <random>
 using namespace std;
 namespace NS_BBTSP {
 #define INF INT_MAX
@@ -143,11 +144,15 @@ int ClsNode::getd(int r, int c)
 ClsNode ClsNode::GenLChild(int k, int l)
 {
     auto node = *this;
-    auto r = find(node.RowIdx.begin(), node.RowIdx.end(), node.ColIdx[l]);
-    auto c = find(node.ColIdx.begin(), node.ColIdx.end(), node.RowIdx[k]);
+    auto r = find(node.RowIdx.begin(), node.RowIdx.end(), 
+        node.ColIdx[l]);
+    auto c = find(node.ColIdx.begin(), node.ColIdx.end(), 
+        node.RowIdx[k]);
     if (r != node.RowIdx.end() && c != node.ColIdx.end())
-        node.W[r - node.RowIdx.begin()][c - node.ColIdx.begin()] = INF;
-    node.Path.push_back(make_pair(node.RowIdx[k], node.ColIdx[l]));
+        node.W[r - node.RowIdx.begin()]
+            [c - node.ColIdx.begin()] = INF;
+    node.Path.push_back(make_pair(node.RowIdx[k], 
+        node.ColIdx[l]));
     node.RowIdx.erase(node.RowIdx.begin() + k);
     node.ColIdx.erase(node.ColIdx.begin() + l);
     node.W.erase(node.W.begin() + k);
@@ -166,14 +171,18 @@ ClsNode ClsNode::GenLChild(int k, int l)
             DAux = node.W[0][1] + node.W[1][0];
         if (DMain < DAux)
         {
-            node.Path.push_back({ node.RowIdx[0], node.ColIdx[0] });
-            node.Path.push_back({ node.RowIdx[1], node.ColIdx[1] });
+            node.Path.push_back({ node.RowIdx[0], 
+                node.ColIdx[0] });
+            node.Path.push_back({ node.RowIdx[1], 
+                node.ColIdx[1] });
             node.Bound += DMain;
         }
         else
         {
-            node.Path.push_back({ node.RowIdx[1], node.ColIdx[0] });
-            node.Path.push_back({ node.RowIdx[0], node.ColIdx[1] });
+            node.Path.push_back({ node.RowIdx[1], 
+                node.ColIdx[0] });
+            node.Path.push_back({ node.RowIdx[0], 
+                node.ColIdx[1] });
             node.Bound += DAux;
         }
     }
@@ -246,7 +255,7 @@ void TestBBTSP()
             {   1,	 5,	  2,   4, INF }
         },
         //www.techiedelight.com
-        //Travelling Salesman Problem using Branch and Bound
+        //TSP using Branch and Bound
         //Optimal dist: 34
         //Optimal path: 0-2,2-3,3-1,1-4,4-0
         //Depth: 3, LastNode: I, QLength: 4
@@ -269,8 +278,8 @@ void TestBBTSP()
             {  11,   7,   9, INF,   2 },
             {  18,   7,  17,   4, INF }
         },
-        //Data Structures & Algorithm Analysis in C++ (V3.2)
-        //C. Shaffer, Chap. 17, p. 554
+        //Data Structures & Algorithm Analysis in C++
+        //C. Shaffer, Chap. 17, p. 554, (V3.2)
         //Optimal dist: 9
         //Optimal path: 0-1,1-4,4-3,3-2,2-0
         //Depth: 3, LastNode: K, QLength: 5
@@ -294,7 +303,8 @@ void TestBBTSP()
             {   2,   4,   9, INF,   7 },
             {   4,   5,  21,   7, INF }
         },
-        //https://www.slideshare.net/jeanepaguio/graph-theory-27567865
+        //https://www.slideshare.net/jeanepaguio/
+        //graph-theory-27567865
         //Optimal dist: 20
         //Optimal path: 0-1,1-4,4-3,3-2,2-0
         //Depth: 4, LastNode: M, QLength: 4
@@ -322,23 +332,26 @@ void TestBBTSP()
         {
             if (j > 0)
                 printf(",");
-            printf("%d-%d", OptimalPath[k].first, OptimalPath[k].second);
+            printf("%d-%d", OptimalPath[k].first, 
+                OptimalPath[k].second);
             k = OptimalPath[k].second;
         }
         printf("\n");
     }
 }
-#include "..\..\..\..\include\headers.h"
 void TestBBTSPRandom()
 {
 #define N 5
+    random_device rdev{};
+    default_random_engine e{ rdev() };
+    uniform_int_distribution<int> rnd{ 1, 5 };
     vector<vector<int>> w(N, vector<int>(N));
     for (int i = 0; i < N; i++)
         for (int j = 0; j < N; j++)
             if (i == j)
                 w[i][j] = INF;
             else
-                w[i][j] = RandRange(1, 5);
+                w[i][j] = rnd(e);
     printf("TestBBTSP is working ...\n");
     OptimalDist = INF;
     OptimalPath.clear();
@@ -352,7 +365,8 @@ void TestBBTSPRandom()
     {
         if (j > 0)
             printf(",");
-        printf("%d-%d", OptimalPath[k].first, OptimalPath[k].second);
+        printf("%d-%d", OptimalPath[k].first, 
+            OptimalPath[k].second);
         k = OptimalPath[k].second;
     }
     printf("\n");

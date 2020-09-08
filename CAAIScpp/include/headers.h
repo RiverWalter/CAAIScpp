@@ -118,4 +118,4 @@ void TestParityCheck(int r, int c, int even);
 tuple<int, int, int>ExtEucGCDNonRec(int a, int b);
 
 //Branch and Bound
-void BB0_1KnapsackCaller(int n, int pW, int *w, int *v);
+//void BB0_1KnapsackCaller(int n, int pW, int *w, int *v);
