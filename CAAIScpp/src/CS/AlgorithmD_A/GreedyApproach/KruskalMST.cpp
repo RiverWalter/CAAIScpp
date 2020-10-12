@@ -11,7 +11,7 @@ void GenEdges();
 void MakeSet();
 void Output(int v0);
 #define INF INT_MAX
-static int N;
+static int n;
 static vector<vector<int>> WMatrix;
 static vector<pair<int, pair<int, int>>> Edges;
 //Node struct for the disjoint set
@@ -24,10 +24,10 @@ static vector<pair<int, int>> MST;
 //The adjacency list for MST
 static vector<vector<int>> MSTList;
 static vector<int> Prev;
-void KruskalMSTCaller(int n, 
+void KruskalMSTCaller(int an, 
     vector<vector<int>> &wMatrix, int v0)
 {
-    N = n;
+    n = an;
     WMatrix = wMatrix;
     Initialization();
     KruskalMST();
@@ -44,7 +44,7 @@ void KruskalMST()
         if (setU != setV)
         {
             MST.push_back(e.second);
-            if (MST.size() == N - 1)
+            if (MST.size() == n - 1)
                 break;
             UnionSets(setU, setV);
         }
@@ -79,9 +79,9 @@ void GenEdges()
 {
     Edges.clear();
     //Traverse the upper triangle of WMatrix
-    for (int i = 0; i < N - 1; i++)
+    for (int i = 0; i < n - 1; i++)
     {
-        for (int j = i + 1; j < N; j++)
+        for (int j = i + 1; j < n; j++)
             if (WMatrix[i][j] != INF)
                 Edges.push_back({ WMatrix[i][j], 
                     {i, j} });
@@ -90,18 +90,18 @@ void GenEdges()
 void MakeSet()
 {
     DisjointSet.clear();
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < n; i++)
         DisjointSet.push_back(DJSNode(i));
 }
 void OutputWMatrix()
 {
-    printf("N = %d\n", N);
+    printf("n = %d\n", n);
     printf("The weight matrix:\n");
     printf("%3c", ' ');
-    for (int j = 0; j < N; j++)
+    for (int j = 0; j < n; j++)
         printf("%3d", j + 1);
     printf("\n");
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < n; i++)
     {
         printf("%3d", i + 1);
         for (auto j : WMatrix[i])
@@ -125,7 +125,7 @@ void OutputPath(int u)
 void GenMSTList()
 {
     MSTList.clear();
-    MSTList.resize(N);
+    MSTList.resize(n);
     for (auto &e: MST)
     {
         MSTList[e.first].push_back(e.second);
@@ -150,12 +150,12 @@ void Output(int v0)
     printf("Kruskal's MST algorithm\n");
     OutputWMatrix();
     int wSum = 0;
-    for (int i = 0; i < N - 1; i++)
+    for (int i = 0; i < n - 1; i++)
         wSum += WMatrix[MST[i].first][MST[i].second];
     GenMSTList();
     Prev.clear();
-    Prev.resize(N);
-    for (int i = 0; i < N; i++)
+    Prev.resize(n);
+    for (int i = 0; i < n; i++)
         Prev[i] = -2;
     Prev[v0] = -1;
     GenPrev(v0);
@@ -166,7 +166,7 @@ void Output(int v0)
             WMatrix[e.first][e.second]);
     printf("Total MST weight: %d\n", wSum);
     printf("The MST paths from vertex %d:\n", v0 + 1);
-    for (int u = 0; u < N; u++)
+    for (int u = 0; u < n; u++)
         if (u != v0)
         {
             printf("%3d: ", u + 1);
@@ -179,7 +179,6 @@ void Output(int v0)
 using namespace NS_KruskalMST;
 void TestKruskalMST(int v0 = 0)
 {
-    vector<int> n = { 5, 6, 9 };
     vector<vector<vector<int>>> w = {
         //https://www.geeksforgeeks.org/
         //prims-minimum-spanning-tree-mst-greedy-algo-5/
@@ -213,11 +212,11 @@ void TestKruskalMST(int v0 = 0)
             { INF,INF,  2,INF,INF,INF,  6,  7,  0 },
         },
     };
-    int k = n.size();
+    int k = w.size();
     for (int i = 0; i < k; i++)
     {
-        if (v0 > n[i] - 1)
-            v0 = n[i] - 1;
-        KruskalMSTCaller(n[i], w[i], v0);
+      if (v0 > w[i].size() - 1)
+        v0 = w[i].size() - 1;
+      KruskalMSTCaller(w[i].size(), w[i], v0);
     }
 }

@@ -12,15 +12,15 @@ void InsertQ(int w);
 void OutputDistMatrix();
 void Output(int v0);
 #define INF INT_MAX
-static int N;
+static int n;
 static vector<vector<int>> W, AdjList;
 static vector<int> Dist, Prev, Q;
 //-1: Free, -2: Finished, Other(>=0): Position in Q
 static vector<int> S;
-void DijkstraSSSPCaller(int n,
+void DijkstraSSSPCaller(int an,
     vector<vector<int>> &w, int v0)
 {
-    N = n;
+    n = an;
     W = w;
     OutputDistMatrix();
     Initialization(v0);
@@ -88,44 +88,44 @@ void SiftUp(int i)
 void InsertQ(int w)
 {
     Q.push_back(w);
-    int n = int(Q.size() - 1);
-    S[w] = n;
-    SiftUp(n);
+    int k = int(Q.size() - 1);
+    S[w] = k;
+    SiftUp(k);
 }
 void Initialization(int v0)
 {
     GenAdjList();
     Dist.clear();
-    Dist.resize(N, INF);
+    Dist.resize(n, INF);
     Dist[v0] = 0;
     Prev.clear();
-    Prev.resize(N, -1);
+    Prev.resize(n, -1);
     Q.clear();
     Q.push_back(v0);
     S.clear();
-    S.resize(N, -1);
+    S.resize(n, -1);
     S[v0] = 0;
 }
 void GenAdjList()
 {
     AdjList.clear();
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < n; i++)
     {
         AdjList.push_back(vector<int>());
-        for (int j = 0; j < N; j++)
+        for (int j = 0; j < n; j++)
             if (W[i][j] && W[i][j] != INF)
                 AdjList[i].push_back(j);
     }
 }
 void OutputDistMatrix()
 {
-    printf("N = %d\n", N);
+    printf("n = %d\n", n);
     printf("The distance matrix:\n");
     printf("%3c", ' ');
-    for (int j = 0; j < N; j++)
+    for (int j = 0; j < n; j++)
         printf("%3d", j + 1);
     printf("\n");
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < n; i++)
     {
         printf("%3d", i + 1);
         for (auto j : W[i])
@@ -150,7 +150,7 @@ void Output(int v0)
 {
     printf("The shortest distance and path from node %d:\n",
         v0 + 1);
-    for (int u = 0; u < N; u++)
+    for (int u = 0; u < n; u++)
         if (u != v0)
         {
             printf("%3d: ", u + 1);
@@ -164,7 +164,6 @@ void Output(int v0)
 using namespace NS_DijkstraSSSP;
 void TestDijkstraSSSP(int v0 = 0)
 {
-    vector<int> n = { 5, 6, 9 };
     vector<vector<vector<int>>> w = {
         //https://www.geeksforgeeks.org/
         //prims-minimum-spanning-tree-mst-greedy-algo-5/
@@ -198,11 +197,11 @@ void TestDijkstraSSSP(int v0 = 0)
             { INF,INF,  2,INF,INF,INF,  6,  7,  0 },
         },
     };
-    int k = n.size();
+    int k = w.size();
     for (int i = 0; i < k; i++)
     {
-        if (v0 > n[i] - 1)
-            v0 = n[i] - 1;
-        DijkstraSSSPCaller(n[i], w[i], v0);
+      if (v0 > w[i].size() - 1)
+        v0 = w[i].size() - 1;
+      DijkstraSSSPCaller(w[i].size(), w[i], v0);
     }
 }

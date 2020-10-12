@@ -62,7 +62,7 @@ void TestESTSP_UT_SD_TH(int low, int high);
 
 //Dynamic programming
 void TestLSEditDist();
-void TestMatrixChainDP();
+void TestDPMatrixChain();
 void TestDP0_1Knapsack();
 void TestTSP_BHK_DPvA();
 void TestTSP_BHK_DPA();

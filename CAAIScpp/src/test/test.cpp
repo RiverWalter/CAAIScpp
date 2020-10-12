@@ -6,22 +6,34 @@
 #include <thread>
 #include <vector>
 #include <queue>
+#include <random>
 
 void testString();
 void testFor();
 void testVector();
+void testRandom();
 vector<vector<int>> a;
 
 /////////
 void basicTests()
 {
-    testVector();
+  testRandom();
+    //testVector();
     //testFor();
 	//testString();
     //printf("RAND_MAX = %d", RAND_MAX);
     ////test sizeof
     //int n;
     //printf("sizeof int = %d, size of n = %d", sizeof(int), sizeof(n));
+}
+void testRandom()
+{
+  default_random_engine e{ 1 };
+  uniform_int_distribution<int> d{ 0, 10 };
+  for (int i = 0; i < 10; i++)
+  {
+    printf("i:%d; %d\n", i, d(e));
+  }
 }
 void testVector()
 {

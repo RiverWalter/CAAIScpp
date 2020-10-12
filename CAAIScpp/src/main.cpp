@@ -20,7 +20,7 @@ int main()
     //TestParityCheck(4, 30, 0);
 
     //RSA
-    TestRSA();
+    //TestRSA();
     //TestMRPT();
     //TestRS4ME();
     //TestChnRA();
@@ -34,7 +34,7 @@ int main()
 
     //***Dynamic programming
     //TestLSEditDist();
-    //TestMatrixChainDP();
+    //TestDPMatrixChain();
     //TestDP0_1Knapsack();
     //TestDPTSP();
     //TestTSP_BHK_DP_N_SD(17);
@@ -92,7 +92,7 @@ int main()
     //Greedy Algorithms
     //TestDijkstraSSSP(5);
     //TestPrimMST(0);
-    //TestKruskalMST(0);
+    TestKruskalMST(0);
     //TestHuffmanCoding();
 
     //Branch and Bound
