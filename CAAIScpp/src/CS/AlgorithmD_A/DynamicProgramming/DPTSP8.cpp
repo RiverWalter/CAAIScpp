@@ -3,7 +3,7 @@
 #include <set>
 #include <map>
 using namespace std;
-namespace NS_DPTSP {
+namespace NS_DPTSP8 {
 #define INF (INT_MAX / 2)
 void DPTSP(const vector<vector<int>>& w);
 void Initialization(const vector<vector<int>>& w);
@@ -136,9 +136,9 @@ void OutputW(vector<vector<int>> const& w)
         printf("\n");
     }
 }
-} //namespace NS_DPTSP
-using namespace NS_DPTSP;
-void TestDPTSP()
+} //namespace NS_DPTSP8
+using namespace NS_DPTSP8;
+void TestDPTSP8()
 {
     vector<vector<vector<int>>> w =
     {
@@ -224,6 +224,33 @@ void TestDPTSP()
             {   8,  10, INF,   6,   5 },
             {   4,   9,   6, INF,   1 },
             {   7,   2,   5,   1, INF }
+        },
+        //08U-03
+        //Optimal dist : 15
+        //Optimal tour : 0-4-5-7-6-3-1-2-0
+        {
+            { INF,   3,   1,   3,   2, INF, INF, INF },
+            {   3, INF,   1,   2,   4, INF, INF, INF },
+            {   1,   1, INF, INF, INF,   3, INF, INF },
+            {   3,   2, INF, INF,   4, INF,   2,   3 },
+            {   2,   4, INF,   4, INF,   1, INF,   3 },
+            { INF, INF,   3, INF,   1, INF, INF,   4 },
+            { INF, INF, INF,   2, INF, INF, INF,   2 },
+            { INF, INF, INF,   3,   3,   4,   2, INF },
+        },
+        //09U-02
+        //Optimal dist: 61
+        //Optimal tour: 0-7-8-6-5-4-3-2-1-0
+        {
+            { INF,   4, INF, INF, INF, INF, INF,   8, INF },
+            {   4, INF,   8, INF, INF, INF, INF,  11, INF },
+            { INF,   8, INF,   7, INF,   4, INF, INF,   2 },
+            { INF, INF,	  7, INF,   9,  14, INF, INF, INF },
+            { INF, INF, INF,   9, INF,  10, INF, INF, INF },
+            { INF, INF,	  4,  14,  10, INF,	  2, INF, INF },
+            { INF, INF, INF, INF, INF,   2, INF,   1,   6 },
+            {   8,  11, INF, INF, INF, INF,	  1, INF,   7 },
+            { INF, INF,	  2, INF, INF, INF,	  6,   7, INF }
         },
     };
     printf("TestDPTSP is working ...\n");
