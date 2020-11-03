@@ -8,7 +8,7 @@ int FindSet(int u);
 void UnionSets(int u, int v);
 void Initialization();
 void GenEdges();
-void MakeSet();
+void MakeSets();
 void Output(int v0);
 #define INF INT_MAX
 static int n;
@@ -53,10 +53,10 @@ void KruskalMST()
 int FindSet(int u)
 {
     while (u != DisjointSet[u].Parent)
-        u = FindSet(DisjointSet[u].Parent);
+        u = DisjointSet[u].Parent;
         //For path compression:
         //DisjointSet[u].Parent = 
-        //    Find(DisjointSet[u].Parent);
+        //    FindSet(DisjointSet[u].Parent);
     return u;
 }
 void UnionSets(int u, int v)
@@ -72,7 +72,7 @@ void Initialization()
 {
     GenEdges();
     sort(Edges.begin(), Edges.end());
-    MakeSet();
+    MakeSets();
     MST.clear();
 }
 void GenEdges()
@@ -87,7 +87,7 @@ void GenEdges()
                     {i, j} });
     }
 }
-void MakeSet()
+void MakeSets()
 {
     DisjointSet.clear();
     for (int i = 0; i < n; i++)
@@ -131,7 +131,6 @@ void GenMSTList()
         MSTList[e.first].push_back(e.second);
         MSTList[e.second].push_back(e.first);
     }
-
 }
 void GenPrev(int v)
 {

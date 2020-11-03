@@ -36,7 +36,7 @@ int main()
     //TestLSEditDist();
     //TestDPMatrixChain();
     //TestDP0_1Knapsack();
-    TestDPTSP();
+    //TestDPTSP();
     //TestDPTSP8();
     //TestTSP_BHK_DP_N_SD(17);
     //TestTSP_BHK_DPA();
@@ -93,7 +93,7 @@ int main()
     //Greedy Algorithms
     //TestDijkstraSSSP(5);
     //TestPrimMST(0);
-    //TestKruskalMST(0);
+    TestKruskalMST(0);
     //TestHuffmanCoding();
 
     //Branch and Bound
