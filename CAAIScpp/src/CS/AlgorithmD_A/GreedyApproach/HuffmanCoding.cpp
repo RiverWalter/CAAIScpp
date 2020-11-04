@@ -89,8 +89,7 @@ void Initialization(vector<pair<char, int>> chars)
 }
 void Finalization()
 {
-  for (auto node : Q)
-    DeleteANode(node);
+  DeleteANode(Q[0]);
 }
 void DeleteANode(HFMNode* node)
 {
