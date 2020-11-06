@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <vector>
 #include <algorithm>
-namespace NS_KruskalMST {
+namespace NS_KruskalMST0 {
 using namespace std;
 void KruskalMST();
 int FindSet(int u);
@@ -13,7 +13,7 @@ void Output(int v0);
 #define INF INT_MAX
 static int n;
 static vector<vector<int>> WMatrix;
-static vector<pair<pair<int, int>, int>> Edges;
+static vector<pair<int, pair<int, int>>> Edges;
 //Node struct for the disjoint set
 struct DJSNode {
     int Parent; int Rank;
@@ -37,13 +37,13 @@ void KruskalMST()
 {
     for (auto &e: Edges)
     {
-        int u = e.first.first;
-        int v = e.first.second;
+        int u = e.second.first;
+        int v = e.second.second;
         int setU = FindSet(u);
         int setV = FindSet(v);
         if (setU != setV)
         {
-            MST.push_back(e.first);
+            MST.push_back(e.second);
             if (MST.size() == n - 1)
                 break;
             UnionSets(setU, setV);
@@ -71,10 +71,7 @@ void UnionSets(int u, int v)
 void Initialization()
 {
     GenEdges();
-    sort(Edges.begin(), Edges.end(), 
-        [](pair<pair<int, int>, int>a, 
-            pair<pair<int, int>, int>b)
-        {return a.second < b.second; });
+    sort(Edges.begin(), Edges.end());
     MakeSets();
     MST.clear();
 }
@@ -86,8 +83,8 @@ void GenEdges()
     {
         for (int j = i + 1; j < n; j++)
             if (WMatrix[i][j] != INF)
-                Edges.push_back({ {i, j},
-                    WMatrix[i][j] });
+                Edges.push_back({ WMatrix[i][j], 
+                    {i, j} });
     }
 }
 void MakeSets()
@@ -175,9 +172,9 @@ void Output(int v0)
         }
     printf("\n");
 }
-} //namespace NS_KruskalMST
-using namespace NS_KruskalMST;
-void TestKruskalMST(int v0 = 0)
+} //namespace NS_KruskalMST0
+using namespace NS_KruskalMST0;
+void TestKruskalMST0(int v0 = 0)
 {
     vector<vector<vector<int>>> w = {
         //https://www.geeksforgeeks.org/

@@ -129,6 +129,7 @@ void Initialization(int *w, int *v)
     Items.clear();
     for (int i = 0; i < N; i++)
         Items.push_back(stItem(w[i], v[i]));
+    //sort(Items.begin(), Items.end());
     sort(Items.begin(), Items.end(),
         [](stItem a, stItem b)
     { return (double)a.v / a.w > (double)b.v / b.w; });

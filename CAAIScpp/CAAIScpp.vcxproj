@@ -155,6 +155,7 @@
     <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\DijkstraSSSP.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\HuffmanCoding.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\KruskalMST.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\KruskalMST0.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\PrimMST.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\RSA\ChnRA.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\RSA\ExtEucGCDNonRec.cpp" />

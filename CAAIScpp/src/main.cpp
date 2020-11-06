@@ -93,8 +93,8 @@ int main()
     //Greedy Algorithms
     //TestDijkstraSSSP(5);
     //TestPrimMST(0);
-    //TestKruskalMST(0);
-    TestHuffmanCoding();
+    TestKruskalMST(0);
+    //TestHuffmanCoding();
 
     //Branch and Bound
     //TestBB0_1Knapsack();

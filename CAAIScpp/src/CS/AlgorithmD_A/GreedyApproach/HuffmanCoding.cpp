@@ -51,6 +51,16 @@ HFMNode* ExtractMin(vector<HFMNode*>& H)
     SiftDown(H, 0);
   return p;
 }
+void SiftDown(vector<HFMNode*>& H, int i)
+{
+    while ((i = (i << 1) + 1) < H.size()) {
+        if ((i + 1 < H.size()) && (H[i + 1]->Freq < H[i]->Freq))
+            i = i + 1;
+        if (H[(i - 1) >> 1]->Freq > H[i]->Freq)
+            swap(H[(i - 1) >> 1], H[i]);
+        else break;
+    }
+}
 void InsertH(vector<HFMNode*>& H, HFMNode* node)
 {
   H.push_back(node);
@@ -61,16 +71,6 @@ void SiftUp(vector<HFMNode*>& H, int i)
   while (i > 0 && H[i]->Freq < H[(i - 1) >> 1]->Freq) {
     swap(H[i], H[(i - 1) >> 1]);
     i = (i - 1) >> 1;
-  }
-}
-void SiftDown(vector<HFMNode*>& H, int i)
-{
-  while ((i = (i << 1) + 1) < H.size()) {
-    if ((i + 1 < H.size()) && (H[i + 1]->Freq < H[i]->Freq))
-      i = i + 1;
-    if (H[(i - 1) >> 1]->Freq > H[i]->Freq)
-      swap(H[(i - 1) >> 1], H[i]);
-    else break;
   }
 }
 void MinHeapify(vector<HFMNode*>& H)
@@ -132,9 +132,7 @@ void Output()
   coding.clear();
   codingList.clear();
   GetHuffmanCoding(Q[0]);
-  sort(codingList.begin(), codingList.end(),
-    [](pair<char, vector<char>>a, pair<char, vector<char>>b)
-    {return a.first < b.first; });
+  sort(codingList.begin(), codingList.end());
   for (auto c1 : codingList)
   {
     printf("  %c: ", c1.first);
