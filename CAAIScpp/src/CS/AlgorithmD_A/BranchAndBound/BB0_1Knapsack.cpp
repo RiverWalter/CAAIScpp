@@ -39,31 +39,34 @@ void BB0_1KnapsackCaller(int n, int pW, int *w, int *v)
 }
 void BB0_1Knapsack()
 {
-    stNode q, r;
+    stNode q, left, right;
     while (!Q.empty())
     {
         q = ExtractMax();
         if (q.boundV > OptV)
         {
-            r = q;
-            r.d++;
-            r.w += Items[r.d - 1].w;
-            r.v += Items[r.d - 1].v;
-            r.items.push_back(1);
-            if (r.w <= W && r.v > OptV)
+            left = q;
+            left.d++;
+            left.w += Items[left.d - 1].w;
+            left.v += Items[left.d - 1].v;
+            left.items.push_back(1);
+            if (left.w <= W)
             {
-                OptV = r.v;
-                OptItems = vector<int>(r.items);
+                if (left.v > OptV)
+                {
+                    OptV = left.v;
+                    OptItems = vector<int>(left.items);
+                }
+                left.boundV = BoundV(left);
+                if (left.boundV > OptV)
+                    InsertQ(stNode(left));
             }
-            r.boundV = BoundV(r);
-            if (r.boundV > OptV)
-                InsertQ(stNode(r));
-            r = q;
-            r.d++;
-            r.items.push_back(0);
-            r.boundV = BoundV(r);
-            if (r.boundV > OptV)
-                InsertQ(stNode(r));
+            right = q;
+            right.d++;
+            right.items.push_back(0);
+            right.boundV = BoundV(right);
+            if (right.boundV > OptV)
+                InsertQ(stNode(right));
         }
     }
 }

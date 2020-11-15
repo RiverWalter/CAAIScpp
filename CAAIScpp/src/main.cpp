@@ -29,7 +29,7 @@ int main()
     //TestExtEucGCDNonRec();
 
     //Backtracking
-    //TestBTnQueens(8);
+    //TestBTnQueens(20);
     //TestBTKColoring(3);
 
     //***Dynamic programming
@@ -93,11 +93,11 @@ int main()
     //Greedy Algorithms
     //TestDijkstraSSSP(5);
     //TestPrimMST(0);
-    TestKruskalMST(0);
+    //TestKruskalMST(0);
     //TestHuffmanCoding();
 
     //Branch and Bound
-    //TestBB0_1Knapsack();
+    TestBB0_1Knapsack();
     //TestBBTSP();
     //TestBBTSPRandom();
     //TestBBTSPt();
