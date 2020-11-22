@@ -97,8 +97,8 @@ int main()
     //TestHuffmanCoding();
 
     //Branch and Bound
-    TestBB0_1Knapsack();
-    //TestBBTSP();
+    //TestBB0_1Knapsack();
+    TestBBTSP();
     //TestBBTSPRandom();
     //TestBBTSPt();
     //TestBBTSPtd();

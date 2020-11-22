@@ -19,8 +19,13 @@ struct ClsDkl {
         D = d; K = k; L = l;
     }
 };
-struct ClsNode
+class ClsNode
 {
+    vector<int> RowReduction();
+    vector<int> ColReduction();
+    int Reduce();
+    int getd(int r, int c);
+public:
     vector<int> RowIdx;
     vector<int> ColIdx;
     vector<pair<int, int>> Path;
@@ -38,14 +43,9 @@ struct ClsNode
         }
         Bound = Reduce();
     }
-    vector<int> RowReduction();
-    vector<int> ColReduction();
-    int Reduce();
     ClsDkl GetMaxD();
     ClsNode GenLChild(int k, int l);
     ClsNode GenRChild(int k, int l);
-private:
-    int getd(int r, int c);
 };
 void BBTSP(vector<vector<int>> w)
 {

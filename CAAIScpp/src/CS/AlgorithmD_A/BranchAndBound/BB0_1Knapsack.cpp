@@ -12,9 +12,9 @@ struct stItem {
 struct stNode {
     int d; int w; int v; vector<int>items; 
     double boundV;
-    stNode() : d(0), w(0), v(0) {}
+    stNode() : d(0), w(0), v(0), boundV(0){}
     stNode(int pd, int pw, int pv) : 
-        d(pd), w(pw), v(pv) {}
+        d(pd), w(pw), v(pv), boundV(0){}
 };
 stNode ExtractMax();
 void SiftDown(int i);
