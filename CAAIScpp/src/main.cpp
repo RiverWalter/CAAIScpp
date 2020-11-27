@@ -21,7 +21,7 @@ int main()
 
     //RSA
     //TestRSA();
-    //TestMRPT();
+    TestMRPT();
     //TestRS4ME();
     //TestChnRA();
     //TestMODInverse();
@@ -98,7 +98,7 @@ int main()
 
     //Branch and Bound
     //TestBB0_1Knapsack();
-    TestBBTSP();
+    //TestBBTSP();
     //TestBBTSPRandom();
     //TestBBTSPt();
     //TestBBTSPtd();

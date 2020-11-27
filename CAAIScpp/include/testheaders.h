@@ -72,7 +72,7 @@ void TestDPTSP8();
 //void TestDPTSPRandom();
 
 //RSA
-void TestRSA(int m = 13);
+void TestRSA(int mx = 0, int my = 20);
 void TestMRPT();
 void TestRS4ME();
 void TestExtEucGCDNonRec();

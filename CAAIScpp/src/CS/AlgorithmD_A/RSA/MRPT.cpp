@@ -23,10 +23,8 @@ void MRPT_TrialDiv(int n, int s)
 bool MRPT(int n, int s)
 {
   auto v = GetUniqueRandNums(2, n - 2, s);
-  int a;
-  for (int j = 0; j < s; j++)
+  for (auto a : v)
   {
-    a = v[j];
     if (Witness(a, n))
       return false;
   }
@@ -93,10 +91,10 @@ vector<int> GetBits(int b)
 vector<int> GetUniqueRandNums(int low, int high, int k)
 {
   vector<int> v;
-  if (low > high) //n = 3: low = 2, high = 1
+  if (low > high) //k = 3: low = 2, high = 1
   {
-    for (int i = 0; i < k; i++)
-      v.push_back(low);
+    printf("GetUniqueRandNums: low=%d, high=%d, k=%d\n", low, high, k);
+    v.push_back(low);
     return v;
   }
   random_device rdev{};
@@ -107,8 +105,6 @@ vector<int> GetUniqueRandNums(int low, int high, int k)
   {
     for (int i = low; i <= high; i++)
       v.push_back(i);
-    for (int i = high - low + 1; i < k; i++)
-      v.push_back(high);
   }
   else
     for (int i = 0; i < k; i++)

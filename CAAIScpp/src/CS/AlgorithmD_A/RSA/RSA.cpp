@@ -71,10 +71,8 @@ void Get_ed(int phi_n, int& e, int& d)
 bool MRPT(int n, int s)
 {
     auto v = GetUniqueRandNums(2, n - 2, s);
-    int a;
-    for (int j = 0; j < s; j++)
+    for (auto a: v)
     {
-        a = v[j];
         if (Witness(a, n))
             return false;
     }
@@ -141,10 +139,9 @@ vector<int> GetBits(int b)
 vector<int> GetUniqueRandNums(int low, int high, int k)
 {
     vector<int> v;
-    if (low > high) //n = 3: low = 2, high = 1
+    if (low > high) //k = 3: low = 2, high = 1
     {
-        for (int i = 0; i < k; i++)
-            v.push_back(low);
+        v.push_back(low);
         return v;
     }
     uniform_int_distribution<int> d{ low, high };
@@ -153,8 +150,6 @@ vector<int> GetUniqueRandNums(int low, int high, int k)
     {
         for (int i = low; i <= high; i++)
             v.push_back(i);
-        for (int i = high - low + 1; i < k; i++)
-            v.push_back(high);
     }
     else
         for (int i = 0; i < k; i++)
@@ -179,8 +174,8 @@ Clsdxy ExtEuclidGCD(int a, int b)
 }
 } //namespace NS_RSA
 using namespace NS_RSA;
-void TestRSA(int m = 13)
+void TestRSA(int mx = 0, int my = 20)
 {
-    for (int i = 0; i < 20; i++)
+    for (int m = mx; m < my; m++)
         RSA(m);
 }
