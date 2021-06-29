@@ -2,7 +2,7 @@
 namespace NS_BTKColoring {
 using namespace std;
 void KColoring(int v);
-void KColoringStack();
+//void KColoringStack();
 int CheckColoring(int v);
 void Output();
 static int N, K;

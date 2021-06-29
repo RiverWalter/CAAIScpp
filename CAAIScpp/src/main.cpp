@@ -6,7 +6,7 @@ int main()
 	//SetRandSeed(-1);
     //SetRandSeed(23);
     ConfigConsole();
-    //SetLogFile("SD_TSP_TH_15");
+    SetLogFile("SD_TSP_TH_15");
     //SetLogFile("BHK_DP_N_SD(17)");
 
     char beginTimeStr[100];
@@ -21,7 +21,7 @@ int main()
 
     //RSA
     //TestRSA();
-    TestMRPT();
+    //TestMRPT();
     //TestRS4ME();
     //TestChnRA();
     //TestMODInverse();
@@ -98,14 +98,14 @@ int main()
 
     //Branch and Bound
     //TestBB0_1Knapsack();
-    //TestBBTSP();
+    TestBBTSP();
     //TestBBTSPRandom();
     //TestBBTSPt();
     //TestBBTSPtd();
 
     //***Classical
     //BinarySearchRTest(8);
-    //TestLinearSearch(8);
+    //TestSequentialSearch(8);
 	//TestEuclidGCDTypicalCasesR();
 	//TestEuclidGCDTypicalCases(true);
     //TestEuclidGCDTypicalCases();
@@ -123,12 +123,14 @@ int main()
 	//TestInsertionSort(10);
 	//TestBubbleSort(10);
     //TestSelectionSort(10);
+    //TestSorting();
 
     //***Pseudo random number
     //RandRangeTest(10, 0, 100);
     //RandRangeSetTest(10);
     //RandDblTest(10);
     //RandTest(10);
+    //RandTest();
 
     //***Pure language test
     ////threading

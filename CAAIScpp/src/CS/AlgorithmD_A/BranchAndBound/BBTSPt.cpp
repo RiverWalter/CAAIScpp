@@ -58,7 +58,7 @@ namespace NS_BBTSPt {
         priority_queue < ClsNode, vector<ClsNode>,
             decltype(comp) > PQ(comp);
         ClsNode root(w);
-        printf("Root: Index=%d, Label=%c\n", root.Index, root.Label);
+        //printf("Root: Index=%d, Label=%c\n", root.Index, root.Label);
         //root.Output();
         PQ.push(root);
         //ClsNode minNode;
@@ -73,7 +73,7 @@ namespace NS_BBTSPt {
             auto maxDkl = minNode.GetMaxD();
             //printf("k,l: (%d,%d), D:%d\n", maxDkl.K, maxDkl.L, maxDkl.D);
             auto left = minNode.GenLChild(maxDkl.K, maxDkl.L);
-            printf("Left: Index=%d, Label=%c\n", left.Index, left.Label);
+            //printf("Left: Index=%d, Label=%c\n", left.Index, left.Label);
             //left.Output();
             if (left.Bound < OptimalDist)
             {
@@ -86,7 +86,7 @@ namespace NS_BBTSPt {
                     PQ.push(left);
             }
             auto right = minNode.GenRChild(maxDkl.K, maxDkl.L);
-            printf("Right: Index=%d, Label=%c\n", right.Index, right.Label);
+            //printf("Right: Index=%d, Label=%c\n", right.Index, right.Label);
             //right.Output();
             if (right.Bound < OptimalDist)
                 PQ.push(right);
@@ -160,6 +160,11 @@ namespace NS_BBTSPt {
         auto node = *this;
         auto r = find(node.RowIdx.begin(), node.RowIdx.end(), node.ColIdx[l]);
         auto c = find(node.ColIdx.begin(), node.ColIdx.end(), node.RowIdx[k]);
+        printf("k=%d, l=%d, r - node.RowIdx.begin()=%d, c - node.ColIdx.begin()=%d\n", k, l,
+          r - node.RowIdx.begin(), c - node.ColIdx.begin());
+        printf("node.RowIdx.size():%d, r != node.RowIdx.end():%d, c != node.ColIdx.end():%d\n",
+          node.RowIdx.size(),
+          r != node.RowIdx.end(), c != node.ColIdx.end());
         if (r != node.RowIdx.end() && c != node.ColIdx.end())
             node.W[r - node.RowIdx.begin()][c - node.ColIdx.begin()] = INF;
         node.Path.push_back(make_pair(node.RowIdx[k], node.ColIdx[l]));

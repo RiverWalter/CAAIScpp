@@ -26,6 +26,6 @@ void SetLogFile(const char *tag)
     //fprintf(logFP, "Current time: %s.%d\n", ymdhms, time_b.millitm);
     //fprintf(logFP, "Log file name: %s\n", logFileName);
 
-    delete ymdhms;
-    delete logFileName;
+    delete []ymdhms;
+    delete []logFileName;
 }

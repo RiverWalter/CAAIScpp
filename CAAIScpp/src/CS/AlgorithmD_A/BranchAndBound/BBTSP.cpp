@@ -6,7 +6,7 @@
 #include <cstring>
 #include <climits>
 #include <tuple>
-#include <random>
+//#include <random>
 namespace NS_BBTSP {
 using namespace std;
 #define INF INT_MAX
@@ -149,8 +149,8 @@ ClsNode ClsNode::GenLChild(int k, int l)
     auto c = find(node.ColIdx.begin(), node.ColIdx.end(), 
         node.RowIdx[k]);
     if (r != node.RowIdx.end() && c != node.ColIdx.end())
-        node.W[r - node.RowIdx.begin()]
-            [c - node.ColIdx.begin()] = INF;
+      node.W[r - node.RowIdx.begin()]
+        [c - node.ColIdx.begin()] = INF;
     node.Path.push_back(make_pair(node.RowIdx[k], 
         node.ColIdx[l]));
     node.RowIdx.erase(node.RowIdx.begin() + k);
@@ -233,6 +233,17 @@ void TestBBTSP()
 {
     vector<vector<vector<int>>> w =
     {
+        //Typical
+        //Optimal dist: 39
+        //Optimal path: 0-1,1-4,4-2,2-3,3-0
+        //Depth : 4, LastNode : M, QLength: 3
+        { //0
+            { INF,  13,  24,  19,  15 },
+            {   4, INF,   9,  16,   7 },
+            {  11,   9, INF,   6,   3 },
+            {   8,  25,  12, INF,   4 },
+            {  13,   6,	  5,   7, INF }
+        },
         //Ö£×Úºº, P248
         //Optimal dist: 65
         //Optimal path: 0-1,1-2,2-4,4-3,3-0
@@ -339,6 +350,7 @@ void TestBBTSP()
         printf("\n");
     }
 }
+/*
 void TestBBTSPRandom()
 {
 #define N 5
@@ -370,4 +382,4 @@ void TestBBTSPRandom()
         k = OptimalPath[k].second;
     }
     printf("\n");
-}
+}*/

@@ -15,7 +15,7 @@ void Shuffle(vector<int>& a, int n)
             swap(a[p], a[i]);
     }
 }
-//Generate a random integer in the range [low, high]
+//Generate a random integer in [low, high]
 int RandIntRange(int low, int high)
 {
     return rand() % (high - low + 1) + low;
@@ -24,24 +24,21 @@ int RandIntRange(int low, int high)
 using namespace NS_Shuffle;
 void TestShuffle(int n)
 {
-    //Set random seed using system time for rand()
+    //Set random seed for rand()
     srand((unsigned)time(NULL));
 
     vector<int> a(n);
-    printf("Testing shuffle algorithm: n = %d\n", n);
+    printf("Testing shuffle algorithm:"
+      " n = %d\n", n);
     for (int i = 0; i < n; i++)
         a[i] = i + 1;
     printf("Before shuffle:\n");
     for (int i = 0; i < n; i++)
-    {
         printf("%d ", a[i]);
-    }
     printf("\n");
     Shuffle(a, n);
     printf("After shuffle:\n");
     for (int i = 0; i < n; i++)
-    {
         printf("%d ", a[i]);
-    }
     printf("\n");
 }

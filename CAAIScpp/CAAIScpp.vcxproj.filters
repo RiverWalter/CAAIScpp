@@ -65,9 +65,6 @@
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\GraphDFS.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\LinearSearch.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\Permuting.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -297,6 +294,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\CS\AlgorithmD_A\GreedyApproach\KruskalMST0.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\TestSorting.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\SequentialSearch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

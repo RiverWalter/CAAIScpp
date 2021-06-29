@@ -6,6 +6,7 @@ void RandRangeTest(int n, int low, int high);
 void RandRangeSetTest(int n);
 void RandDblTest(int n);
 void RandTest(int n);
+void RandTest();
 
 //sorting tests
 void TestSelectionSort(int n);
@@ -16,9 +17,10 @@ void TestTwoWayMerge(int m, int n);
 void TestMergeSort(int n);
 void TestMaxHeapify(int n);
 void TestHeapSort(int n);
+void TestSorting();
 
 //classical
-void TestLinearSearch(int n);
+void TestSequentialSearch(int n);
 void BinarySearchRTest(int n);
 void TestShuffle(int n);
 

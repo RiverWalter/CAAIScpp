@@ -7,6 +7,17 @@
 #include <string>
 #include <tuple>
 using namespace std;
+namespace NS_QuickSort
+{ 
+  void QuickSort(int a[], int low, int high);
+}
+namespace NS_HeapSort {
+  void HeapSort(int H[], int n);
+}
+namespace NS_MergeSort {
+  void MergeSort(int a[], int low, int high);
+}
+
 
 //#define Inf SHRT_MAX
 #define Inf INT_MAX
