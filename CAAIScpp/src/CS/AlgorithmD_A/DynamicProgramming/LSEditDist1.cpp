@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-namespace NS_LSEditDist {
+namespace NS_LSEditDist1 {
 using namespace std;
 void Initialization(const string &x, const string &y);
 int GetLSEditDist(const string &x, const string &y);
@@ -138,9 +138,9 @@ void OutputP(const string &x, const string &y)
     }
     printf("\n");
 }
-} //namespace NS_LSEditDist
-using namespace NS_LSEditDist;
-void TestLSEditDist()
+} //namespace NS_LSEditDist1
+using namespace NS_LSEditDist1;
+void TestLSEditDist1()
 {
     vector<vector<string>> abs = {
         { "SUNNY", "SNOWY" },
