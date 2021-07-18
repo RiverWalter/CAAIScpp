@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="src\Classical\BinarySearchR.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BTKColoring.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BTKColoring0.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BTnQueens.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\BranchAndBound\BB0_1Knapsack.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\BranchAndBound\BBTSP.cpp" />
@@ -145,7 +146,8 @@
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DP0_1Knapsack.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DPTSP.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DPTSP8.cpp" />
-    <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\LSEditDist.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\LSEditDist1.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\LSEditDist0.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\MatrixChain.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\GraphBFS.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\GraphDFS.cpp" />

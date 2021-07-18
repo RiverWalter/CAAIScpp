@@ -12,6 +12,7 @@ void testString();
 void testFor();
 void testVector();
 void testRandom();
+void testInfinity();
 vector<vector<int>> a;
 
 /////////
@@ -25,6 +26,10 @@ void basicTests()
     ////test sizeof
     //int n;
     //printf("sizeof int = %d, size of n = %d", sizeof(int), sizeof(n));
+}
+void testInfinity()
+{
+
 }
 void testRandom()
 {

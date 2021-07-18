@@ -30,10 +30,10 @@ int main()
 
     //Backtracking
     //TestBTnQueens(20);
-    //TestBTKColoring(3);
+    //TestBTKColoring(4);
 
     //***Dynamic programming
-    //TestLSEditDist();
+    TestLSEditDist();
     //TestDPMatrixChain();
     //TestDP0_1Knapsack();
     //TestDPTSP();
@@ -98,7 +98,7 @@ int main()
 
     //Branch and Bound
     //TestBB0_1Knapsack();
-    TestBBTSP();
+    //TestBBTSP();
     //TestBBTSPRandom();
     //TestBBTSPt();
     //TestBBTSPtd();

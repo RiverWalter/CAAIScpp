@@ -56,7 +56,7 @@
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DP0_1Knapsack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\LSEditDist.cpp">
+    <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\LSEditDist1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\GraphBFS.cpp">
@@ -300,6 +300,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\SequentialSearch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BTKColoring0.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\LSEditDist0.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

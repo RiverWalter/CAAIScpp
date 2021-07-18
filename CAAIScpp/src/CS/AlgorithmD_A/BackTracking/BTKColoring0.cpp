@@ -1,14 +1,13 @@
 #include <vector>
-namespace NS_BTKColoring {
+namespace NS_BTKColoring0 {
 using namespace std;
-void BTKColoring(int v);
-//void BTKColoringStack();
+void KColoring(int v);
+//void KColoringStack();
 int CheckColoring(int v);
 void Output();
 static int N, K;
 static vector<vector<int>> AdjM;
 static vector<int> Colors;
-static bool Done;
 static vector<int> Stack;
 void BTKColoringCaller(int n, int k, 
     vector<vector<int>> &adjM)
@@ -20,27 +19,26 @@ void BTKColoringCaller(int n, int k,
     Colors.resize(N);
     Colors[0] = 1;
     Colors[1] = 2;
-    Done = false;
-    BTKColoring(2);
-    //BTKColoringStack();
+    KColoring(2);
+    //KColoringStack();
     Output();
 }
-void BTKColoring(int v)
+void KColoring(int v)
 {
-    //int c = 1;
-    for (int c = 1; !Done && c <= K; c++)
+    int c = 1;
+    while (!Colors[N-1] && c <= K)
     {
         Colors[v] = c;
         if (CheckColoring(v) == -1)
-            if (v == N - 1)
-              Done = true;
-            else {
-              BTKColoring(v + 1);
+            if (v < N - 1) {
+                KColoring(v + 1);
             }
-        //c++;
+            else
+                break;
+        c++;
     }
-    //if (!Colors[N - 1] && c > K)
-    //    Colors[v] = 0;
+    if (!Colors[N - 1] && c > K)
+        Colors[v] = 0;
 }
 int CheckColoring(int v)
 {
@@ -49,7 +47,7 @@ int CheckColoring(int v)
             return u;
     return -1;
 }
-void BTKColoringStack()
+void KColoringStack()
 {
     Stack.clear();
     Stack.push_back(1);
@@ -122,12 +120,11 @@ void Output()
     }
 }
 } //namespace NS_BTKColoring
-using namespace NS_BTKColoring;
-void TestBTKColoring(int K = 3)
+using namespace NS_BTKColoring0;
+void TestBTKColoring0(int K = 3)
 {
   vector<vector<vector<int>>> adjM = {
     //06U-01: Dijkstra's algorithm on Wikipedia
-    //K=3: (0,1)(1,2)(2,3)(3,1)(4,3)(5,2)
     {
         { 0, 1, 1, 0, 0, 1 },
         { 1, 0, 1, 1, 0, 0 },
@@ -135,16 +132,6 @@ void TestBTKColoring(int K = 3)
         { 0, 1, 1, 0, 1, 0 },
         { 0, 0, 0, 1, 0, 1 },
         { 1, 0, 1, 0, 1, 0 },
-    },
-    //06U-04: XJ-Shen's exercise-5
-    //K=4: (0,1)(1,2)(2,1)(3,3)(4,4)(5,2)
-    {
-        { 0, 1, 0, 1, 1, 1 },
-        { 1, 0, 1, 1, 1, 0 },
-        { 0, 1, 0, 1, 0, 0 },
-        { 1, 1, 1, 0, 1, 0 },
-        { 1, 1, 0, 1, 0, 1 },
-        { 1, 0, 0, 0, 1, 0 },
     },
   };
   for (size_t i = 0; i < adjM.size(); i++)
