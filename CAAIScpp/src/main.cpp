@@ -33,8 +33,8 @@ int main()
     //TestBTKColoring(4);
 
     //***Dynamic programming
-    TestLSEditDist();
-    //TestDPMatrixChain();
+    //TestLSEditDist();
+    TestDPMatrixChain();
     //TestDP0_1Knapsack();
     //TestDPTSP();
     //TestDPTSP8();

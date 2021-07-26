@@ -4,7 +4,7 @@
 namespace NS_LSEditDist {
 using namespace std;
 void Initialization(string &x, string &y);
-int GetLSEditDist(string &x, string &y);
+int DPLSEditDist(string &x, string &y);
 void GetLSEdits(string &x, string &y);
 void Output(string &x, string &y, int OptD);
 void OutputE(string &x, string &y);
@@ -16,11 +16,11 @@ static string xe, ye;
 void LSEditDistCaller(string &x, string &y)
 {
     Initialization(x, y);
-    int OptD = GetLSEditDist(x, y);
+    int OptD = DPLSEditDist(x, y);
     GetLSEdits(x, y);
     Output(x, y, OptD);
 }
-int GetLSEditDist(string &x, string &y)
+int DPLSEditDist(string&x, string&y)
 {
     for (int i = 1; i <= m; i++)
         for (int j = 1; j <= n; j++)
