@@ -152,7 +152,7 @@ void TestLSEditDist()
         { "concise", "receives" },
         { "friend", "difference" },
         { "coincides", "conceive" },
-        { "luminiscence", "sufficiency" },
+        { "luminescence", "sufficiency" },
         { "efficiency", "fiercely" },
         { "there", "hear" },
         { "defence", "disern" },

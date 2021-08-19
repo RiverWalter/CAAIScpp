@@ -14,6 +14,7 @@ void ShowResult();
 static int n;
 static vector<vector<int>> m, s;
 static vector<string> order;
+static int cnt;
 void DPMatrixChainCaller(vector<int> p)
 {
     n = p.size() - 1;
@@ -43,10 +44,12 @@ void DPMatrixChain(vector<int> p)
                 }
             }
         }
+    cnt = 0;
     GenOrder(0, n - 1);
 }
 void GenOrder(int i, int j)
 {
+  cnt++;
     if (i == j)
         order.push_back(string("A") + to_string(i));
     else
@@ -117,6 +120,7 @@ void Show_sMatrix()
 }
 void ShowResult()
 {
+  printf("n=%d, cnt=%d\n", n, cnt);
     printf("The optimal value: %d\n", m[0][n - 1]);
     printf("The optimal solution: ");
     for (auto s : order)

@@ -4,19 +4,20 @@
 #include <map>
 using namespace std;
 namespace NS_DPTSP {
-#define INF (INT_MAX / 2)
+#define INF INT_MAX
 void DPTSP(const vector<vector<int>>& w);
 void Initialization(const vector<vector<int>>& w);
 void Output();
 //List of subsets in size 0-n 
 static vector<vector<set<int>>> Subsets;
 //subp_t: type of a subproblem, (subset, end city)
-typedef pair<set<int>, int> subp_t;
+//typedef pair<set<int>, int> subp_t;
 //subpsol_t: type of subproblem solution
 //(subproblem, (previous city, optimal distance))
-typedef pair<subp_t, pair<int, int>> subpsol_t;
+//typedef pair<subp_t, pair<int, int>> subpsol_t;
 //Cost matrix of subpsol_t
-static map<subp_t, pair<int, int>> Cost;
+//static map<subp_t, pair<int, int>> Cost;
+static map<pair<set<int>, int>, pair<int, int>> Cost;
 static int N, n; //n = N - 1
 static int OptimalDist;
 static vector<int> OptimalTour;
@@ -56,14 +57,16 @@ void DPTSP(const vector<vector<int>> &w)
                     //traverse ss_i_e with each of its city as previous of e
                     for (auto pc = ss_i_e.cbegin(); pc != ss_i_e.cend(); pc++)
                     {
-                        int dx = Cost[subp_t(ss_i_e, *pc)].second + w[*pc][e];
+                        //int dx = Cost[subp_t(ss_i_e, *pc)].second + w[*pc][e];
+                        int dx = Cost[{ss_i_e, * pc}].second + w[*pc][e];
                         if (dx < d)
                         {
                             d = dx;
                             p = *pc;
                         }
                     }
-                    Cost.insert(subpsol_t(subp_t(ss_i, e), pair<int, int>(p, d)));
+                    //Cost.insert(subpsol_t(subp_t(ss_i, e), pair<int, int>(p, d)));
+                    Cost.insert({ {ss_i, e}, {p, d} });
                 } //for e
             } //for c
         } //for ss_i_1
@@ -76,7 +79,8 @@ void DPTSP(const vector<vector<int>> &w)
     int d = INF, c = -1;
     for (int i = 1; i <= n; i++)
     {
-        int dx = Cost[subp_t(sn, i)].second + w[i][0];
+        //int dx = Cost[subp_t(sn, i)].second + w[i][0];
+        int dx = Cost[{sn, i}].second + w[i][0];
         if (dx < d)
         {
             d = dx;
@@ -88,7 +92,8 @@ void DPTSP(const vector<vector<int>> &w)
     OptimalTour.insert(OptimalTour.begin(), c);
     while (c != 0)
     {
-        auto solution = Cost[subp_t(sn, c)];
+        //auto solution = Cost[subp_t(sn, c)];
+        auto solution = Cost[{sn, c}];
         sn.erase(c);
         c = solution.first;
         OptimalTour.insert(OptimalTour.begin(), c);
@@ -105,8 +110,10 @@ void Initialization(const vector<vector<int>>& w)
     vector<set<int>> s_1;
     for (int i = 1; i <= n; i++)
     {
-        s_1.push_back(set<int>({ i }));
-        Cost.insert(subpsol_t(subp_t({ i }, i), pair<int, int>(0, w[0][i])));
+        //s_1.push_back(set<int>({ i }));
+        s_1.push_back({ i });
+        //Cost.insert(subpsol_t(subp_t({ i }, i), pair<int, int>(0, w[0][i])));
+        Cost.insert({ {{ i }, i}, {0, w[0][i]} });
     }
     Subsets.push_back(s_1);
 }

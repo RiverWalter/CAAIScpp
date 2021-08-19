@@ -143,7 +143,7 @@ using namespace NS_LSEditDist1;
 void TestLSEditDist1()
 {
     vector<vector<string>> abs = {
-        { "SUNNY", "SNOWY" },
+        /*{"SUNNY", "SNOWY"},
         { "EXPONENTIAL", "POLYNOMIAL" },
         { "popular", "people" },
         { "water", "wheat" },
@@ -152,14 +152,17 @@ void TestLSEditDist1()
         { "concise", "receives" },
         { "friend", "difference" },
         { "coincides", "conceive" },
-        { "luminiscence", "sufficiency" },
+        { "luminescence", "sufficiency" },
         { "efficiency", "fiercely" },
         { "there", "hear" },
         { "defence", "disern" },
         { "befriend", "different" },
         { "brand", "reread" },
         { "teachers", "nearest" },
-        { "veteran", "wheaten" }
+        { "veteran", "wheaten" },
+        { "vvvv", "uuvvvvu" },
+        { "vvuuuuv", "uuuu" },*/
+        { "vvuuuuv", "" },
     };
     for (auto ab : abs)
     {

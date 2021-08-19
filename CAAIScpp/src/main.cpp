@@ -34,9 +34,10 @@ int main()
 
     //***Dynamic programming
     //TestLSEditDist();
-    TestDPMatrixChain();
+    //TestLSEditDist1();
+    //TestDPMatrixChain();
     //TestDP0_1Knapsack();
-    //TestDPTSP();
+    TestDPTSP();
     //TestDPTSP8();
     //TestTSP_BHK_DP_N_SD(17);
     //TestTSP_BHK_DPA();
