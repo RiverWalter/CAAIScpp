@@ -11,15 +11,17 @@
 void testString();
 void testFor();
 void testVector();
-void testRandom();
+void testRandom(unsigned int seed = 1);
 void testInfinity();
 vector<vector<int>> a;
 
 /////////
 void basicTests()
 {
-  testRandom();
-    //testVector();
+  testRandom(1);
+  testRandom(1);
+  testRandom(2);
+  //testVector();
     //testFor();
 	//testString();
     //printf("RAND_MAX = %d", RAND_MAX);
@@ -31,14 +33,16 @@ void testInfinity()
 {
 
 }
-void testRandom()
+void testRandom(unsigned int seed)
 {
-  default_random_engine e{ 1 };
-  uniform_int_distribution<int> d{ 0, 10 };
+  printf("seed: %d\n", seed);
+  default_random_engine e{ seed };
+  uniform_int_distribution<int> d{ 0, 100 };
   for (int i = 0; i < 10; i++)
   {
-    printf("i:%d; %d\n", i, d(e));
+    printf("i:%d,%d;", i, d(e));
   }
+  printf("\n");
 }
 void testVector()
 {

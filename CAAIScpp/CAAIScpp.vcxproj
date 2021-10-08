@@ -79,7 +79,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <StackReserveSize>41943040</StackReserveSize>
+      <StackReserveSize>2097152</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Classical\BinarySearchR.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\Ancient\pi.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BTKColoring.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BTKColoring0.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\BackTracking\BTnQueens.cpp" />
@@ -146,11 +147,16 @@
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DP0_1Knapsack.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DPTSP.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DPTSP8.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DPTSP8a.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\LSEditDist1.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\LSEditDist0.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\MatrixChain.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\GraphBFS.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\GraphDFS.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\Permuting1.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\PermutingIter.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\PermutingIterA.cpp" />
+    <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\PermutingIterT.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\SequentialSearch.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\Permuting.cpp" />
     <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\PermutingSJT.cpp" />

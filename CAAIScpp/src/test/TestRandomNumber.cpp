@@ -29,7 +29,7 @@ void RandDblTest(int n)
 	for (int i=0; i<n; i++)
 		printf("%3d:%lf\n",i+1, RandDbl());
 }
-void RandTest(int n)
+void RandTest1(int n)
 {
 	printf("范围在[0,%d]间的%d个随机数\n", RAND_MAX, n);
 	for (int i=0; i<n; i++)
@@ -38,7 +38,7 @@ void RandTest(int n)
 void RandTest0(int seed = 1)
 {
 	srand(seed);
-	printf("RAND_MAX: %d\n", RAND_MAX);
+	printf("RAND_MAX: %d, seed: %d\n", RAND_MAX, seed);
 	for (int i = 0; i < 10; i++)
 		printf("%d:%d,", i + 1, rand());
 	printf("\n\n");
@@ -51,6 +51,22 @@ int RandTest1()
 	//printf("seed: %d, s1: %ld, r: %d, sizeof(int): %d, sizeof(long): %d\n", seed, s1, r, sizeof(int), sizeof(long));
 	//seed = s1;
 	return r;
+}
+//计升2001刘福磊
+static int result[10];
+void RandTestLFL(int seed)
+{
+	int ran[10];
+	ran[0] = seed;
+	for (int i = 1; i <= 5; i++)
+	{
+		ran[i] = (214013LL * ran[i - 1] + 2531011) % 2147483648;
+		result[i - 1] = ran[i] >> 16;
+	}
+	printf("刘福磊-种子为1：%d\n", seed);
+	for (int i = 0; i < 5; i++)
+		printf("%d\t", result[i]);
+	printf("\n");
 }
 void RandTest1a()
 {
@@ -350,6 +366,9 @@ void RandTest()
 	//seed 3: 1:48,2:7196,3:9294,4:9091,5:7031,6:23577,7:17702,8:23503,9:27217,10:12168
 
 	//RandTest1a();
+	//RandTest0();
+	//RandTest0(100);
+	RandTestLFL(1);
 	//MCRandTest2();
 	//TestIntSize();
 	//CompromiseMSRand(41, 18467);
@@ -360,5 +379,5 @@ void RandTest()
 	//TestRandBSDLibc();
 	//CompromiseRandBSDLibc();
 	//CompromiseRandBSDLibcT();
-	TestJavaRand();
+	//TestJavaRand();
 }

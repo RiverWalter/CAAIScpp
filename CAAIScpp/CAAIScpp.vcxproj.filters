@@ -308,6 +308,24 @@
     <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\LSEditDist0.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\PermutingIter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\PermutingIterA.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\PermutingIterT.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\ExhaustiveSearch\Permuting1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\DynamicProgramming\DPTSP8a.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CS\AlgorithmD_A\Ancient\pi.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

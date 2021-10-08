@@ -18,7 +18,9 @@ int main()
     
     //Error Control
     //TestParityCheck(4, 30, 0);
-
+    //Ancicent
+    TestLiuhui();
+     
     //RSA
     //TestRSA();
     //TestMRPT();
@@ -37,8 +39,9 @@ int main()
     //TestLSEditDist1();
     //TestDPMatrixChain();
     //TestDP0_1Knapsack();
-    TestDPTSP();
+    //TestDPTSP();
     //TestDPTSP8();
+    //TestDPTSP8a();
     //TestTSP_BHK_DP_N_SD(17);
     //TestTSP_BHK_DPA();
     //TestTSP_BHK_DPvA();
@@ -62,6 +65,21 @@ int main()
     //Exhaustive Search
     //TestSubsetting(4);
     //TestPermuting(4);
+    //TestPermuting1(4);
+    //TestPermuting1(9100);
+    //183900 causes stack overflow,
+    //but 183800 not at stack size 4M(4194304)
+    //18200 for stack size 4M(4194304)
+    //TestPermuting(18200);
+    //9100 for stack size 2M(2097152)
+    //TestPermuting(9100);
+    //4500 for stack size 1M(1048576)
+    //TestPermuting(4500);
+    //TestPermutingIter(4);
+    //TestPermutingIter(1000000);
+    //TestPermutingIterA(4);
+    //TestPermutingIterA(1000000);
+    //TestPermutingIterT(3);
     //TestPermutingSJT(3);
     //TestGraphBFS(3);
     //TestGraphDFS(3);
@@ -76,14 +94,6 @@ int main()
     //ESPermutationTreeI(7);
     //ESSubsetTree(7);
     //TestPrimalTestTrialDivRange(100, true);
-    /*
-    PermutingCallerA(1);
-    PermutingCallerA(2);
-    PermutingCallerA(3);
-    PermutingCallerA(4);
-    PermutingCallerA(5);
-    */
-    //PermutingHeapCaller(4);
     //PermutingSJT(4);
 
     //***Graph

@@ -3,7 +3,7 @@
 #include <set>
 #include <map>
 using namespace std;
-namespace NS_DPTSP8 {
+namespace NS_DPTSP8a {
 #define INF (INT_MAX / 2)
 void DPTSP(const vector<vector<int>>& w);
 void Initialization(const vector<vector<int>>& w);
@@ -136,9 +136,9 @@ void OutputW(vector<vector<int>> const& w)
         printf("\n");
     }
 }
-} //namespace NS_DPTSP8
-using namespace NS_DPTSP8;
-void TestDPTSP8()
+} //namespace NS_DPTSP8a
+using namespace NS_DPTSP8a;
+void TestDPTSP8a0()
 {
     vector<vector<vector<int>>> w =
     {
@@ -252,12 +252,6 @@ void TestDPTSP8()
             {   8,  11, INF, INF, INF, INF,	  1, INF,   7 },
             { INF, INF,	  2, INF, INF, INF,	  6,   7, INF }
         },
-        {
-          {  0, 2, INF,   9},
-          {  1, 0,   4,   6},
-          {  6, 3,   0, INF},
-          {INF, 7,   4,   0}
-        },
     };
     printf("TestDPTSP is working ...\n");
     int n = w.size();
@@ -267,4 +261,58 @@ void TestDPTSP8()
         OutputW(w[i]);
         DPTSPCaller(w[i]);
     }
+}
+//第4章,图4-10，权矩阵及带权邻接表示例
+void tt()
+{
+  vector<vector<vector<int>>> aM =
+  {
+    {
+      {  0, 2, INF,   9},
+      {  1, 0,   4,   6},
+      {  6, 3,   0, INF},
+      {INF, 7,   4,   0}
+    },
+  };
+  vector<vector<vector<pair<char, int>>>> aL =
+  {
+    {
+      { {'B',2}, {'D',9} },
+      { {'A',1}, {'C',4}, {'D',6} },
+      { {'A',6}, {'B',3} },
+      { {'B',7}, {'C',4}}
+    },
+  };
+  printf("aM.size:%d\n", aM.size());
+  int i = 0;
+  for (auto a : aM)
+  {
+    printf("No: %d\n", ++i);
+    for (auto b : a)
+    {
+      for (auto c : b)
+        if (c == INF)
+          printf(" -");
+        else
+          printf("%2d", c);
+      printf("\n");
+    }
+  }
+  printf("aL.size:%d\n", aL.size());
+  i = 0;
+  for (auto a : aL)
+  {
+    printf("No: %d\n", ++i);
+    for (auto b : a)
+    {
+      for (auto c : b)
+        printf("(%c,%d)", c.first, c.second);
+      printf("\n");
+    }
+  }
+}
+void TestDPTSP8a()
+{
+  //TestDPTSP8a0();
+  tt();
 }

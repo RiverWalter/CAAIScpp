@@ -1,11 +1,14 @@
 #pragma once
 #include "headers.h"
 
+//Ancient
+void TestLiuhui();
+
 //Test random number utilities functions
 void RandRangeTest(int n, int low, int high);
 void RandRangeSetTest(int n);
 void RandDblTest(int n);
-void RandTest(int n);
+//void RandTest(int n);
 void RandTest();
 
 //sorting tests
@@ -44,6 +47,10 @@ void TestPrimalTestTrialDivRange(int m, bool detail = false);
 //Exhaustive search
 void TestSubsetting(int n);
 void TestPermuting(int n);
+void TestPermuting1(int n);
+void TestPermutingIter(int n);
+void TestPermutingIterA(int n);
+void TestPermutingIterT(int n);
 void TestPermutingSJT(int n);
 void TestGraphBFS(int v0);
 void TestGraphDFS(int v0);
@@ -72,6 +79,7 @@ void TestTSP_BHK_DPA();
 void TestTSP_BHK_DP_N_SD(int N);
 void TestDPTSP();
 void TestDPTSP8();
+void TestDPTSP8a();
 //void TestDPTSPRandom();
 
 //RSA

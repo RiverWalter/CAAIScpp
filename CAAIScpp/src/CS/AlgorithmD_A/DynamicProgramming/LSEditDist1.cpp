@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <iostream>
 namespace NS_LSEditDist1 {
 using namespace std;
 void Initialization(const string &x, const string &y);
@@ -163,10 +164,14 @@ void TestLSEditDist1()
         { "vvvv", "uuvvvvu" },
         { "vvuuuuv", "uuuu" },*/
         { "vvuuuuv", "" },
+        { "两个字符串间的编辑距离", "编辑距离问题为例讲述" },
     };
     for (auto ab : abs)
     {
         string a = ab[0];
+        //printf("%d %s\n", sizeof(a[0]), a.substr(0,1).c_str());
+        //cout << a << endl;
+        //cout << a[0] << endl;
         string b = ab[1];
         LSEditDistCaller(a, b);
     }
